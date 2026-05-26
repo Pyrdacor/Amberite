@@ -21,9 +21,14 @@ enum TravelType : byte {
     Horse,         // 1
     Raft,          // 2
     Ship,          // 3
-    // 4–8: intermediate travel types (not documented here)
-    SandLizard = 9,
-    SandShip   = 10,
+    MagicDisc,     // 4
+    Eagle,         // 5
+    Fly,           // 6 (super chicken mode)
+    Swim,          // 7
+    WitchBroom,    // 8
+    SandLizard,    // 9
+    SandShip,      // 10
+    Wasp,          // 11 (AA only)
     NoChange   = 0xff  // keep current travel type (Teleport default)
 }
 
@@ -51,11 +56,11 @@ etype[1, Teleport]:
 // ── Event 2 — Door ────────────────────────────────────────────────────────────
 
 etype[2, Door]:
-    - 0: byte    lockpickChanceReduction [0..100]
+    - 0: byte?   lockpickChanceReduction = 100 [0..100]
     - 1: byte    doorIndex
     - 2: byte?   closedTextIndex   = 0xff   // 0xff = no text
     - 3: byte?   unlockedTextIndex = 0xff   // 0xff = no text
-    - 5: word    keyIndex
+    - 5: word    keyIndex // item index
     - 7: word?   unlockFailEventIndex = 0xffff  // 0xffff = none (trap chain)
 
 
@@ -69,11 +74,11 @@ bitfield ChestFlags : byte {
 
 etype[3, Chest]:
     - 0: byte        lockpickChanceReduction [0..100]
-    - 1: byte        searchCheck             [0..100]
+    - 1: byte?       searchCheck = 0         [0..100]
     - 2: byte?       openedTextIndex = 0xff  // 0xff = no text
-    - 3: byte        chestDataIndex
+    - 3: byte        chestDataIndex // 0 = first chest (if extended chest, 0 = 257th chest)
     - 4: ChestFlags  flags
-    - 5: word        keyIndex
+    - 5: word        keyIndex // item index
     - 7: word?       unlockFailEventIndex = 0xffff  // 0xffff = none (trap chain)
 
 
@@ -89,14 +94,14 @@ enum PopupTrigger : byte {
 etype[4, TextPopup]:
     - 0: byte?         pictureIndex    = 0xff  // 0xff = no image
     - 1: PopupTrigger  trigger
-    - 2: byte          triggerWhenBlind [0, 1]
+    - 2: byte?         triggerWhenBlind = 0 [0, 1]
     - 4: byte          textIndex
 
 
 // ── Event 5 — Spinner ─────────────────────────────────────────────────────────
 
 etype[5, Spinner]:
-    - 0: Direction  direction  // North/East/South/West or Random (= Keep = 4)
+    - 0: Direction  direction  // North/East/South/West or Random (= 4)
 
 
 // ── Event 6 — Trap ────────────────────────────────────────────────────────────
@@ -129,7 +134,7 @@ enum Gender : byte {
 etype[6, Trap]:
     - 0: TrapAilment  ailment
     - 1: TrapTarget   target
-    - 2: Gender       affectedGenders
+    - 2: Gender?      affectedGenders = Gender.BothAlt
     - 3: byte         baseDamage
 
 
