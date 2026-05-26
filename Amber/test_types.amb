@@ -1,0 +1,26 @@
+bitfield ItemSlotFlags : byte {
+    Identified,
+    Broken,
+    Cursed
+}
+
+struct ItemSlot {
+    byte amount;
+    byte charges;
+    byte recharges;
+    ItemSlotFlags flags;
+}
+
+enum Color : byte {
+    Red,
+    Green,
+    Blue,
+    White = 15
+}
+
+// Struct with pointer and array fields
+struct Palette {
+    byte count;
+    Ptr<Color> entries[16];
+    Ptr<Palette> next;
+}

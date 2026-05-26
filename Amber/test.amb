@@ -1,0 +1,19 @@
+// Amber test script — basic types, arithmetic and bit ops
+
+byte  lo    = 0xFF;
+word  hi    = 0x1234;
+long  base  = lo + hi * 2;
+bool  flag  = true;
+
+// Bitwise
+lo   = lo & 0x0F;
+hi   = hi | 0x8000;
+base = base ^ 0xDEAD;
+
+// Shifts
+word shifted = hi >> 4;
+byte masked  = lo << 2;
+
+// Unary
+byte inv  = ~lo;
+bool nflag = !flag;

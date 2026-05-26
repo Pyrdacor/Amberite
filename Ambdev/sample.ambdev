@@ -1,0 +1,230 @@
+/*
+ * Amberite event system — feature showcase
+ * Covers every syntax construct in the language.
+ */
+
+// ── Constants ─────────────────────────────────────────────────────────────────
+
+const MAX_ACTORS   = 16
+const MAX_TEXT_ID  = (1 + 1) * 2048        // = 4096, one past the valid range
+const POTION_CAT   = 30
+const KEY_CAT      = 0x40
+const HERO_ID      = MAX_ACTORS / 2
+
+// ── Enums ─────────────────────────────────────────────────────────────────────
+
+// Auto-increment from 0
+enum Direction : byte {
+    North,
+    South,
+    East,
+    West
+}
+
+// Mix of auto-increment, explicit decimal and explicit hex
+enum ItemCategory : byte {
+    None    = 0,
+    Weapon  = 10,
+    Armor   = 11,     // explicit, but also auto (same result here)
+    Potion  = 30,
+    Key     = 0x40    // hex literal
+}
+
+// Word base type
+enum MapLayer : word {
+    Ground,           // 0
+    Object,           // 1
+    Overlay = 0x100   // hex; next auto = 0x101
+}
+
+// ── Bitfields ─────────────────────────────────────────────────────────────────
+
+// Pure auto powers-of-2
+bitfield ActorFlags : byte {
+    Visible,          // 0x01
+    Active,           // 0x02
+    Hostile           // 0x04
+}
+
+// Explicit values with auto-resume after each
+bitfield StatusEffects : word {
+    Poisoned = 1,
+    Stunned,          // 0x02  — resumes from next power of 2 above 1
+    Frozen   = 0x08,  // explicit hex; next auto = 0x10
+    Dead     = 0x80   // explicit hex
+}
+
+// Composed value via OR — Read | Write = 0x03
+bitfield AccessFlags : byte {
+    Read  = 0x01,
+    Write,            // 0x02
+    ReadWrite = Read | Write,  // 0x03
+    Admin = 0x40
+}
+
+// ── Event Types ───────────────────────────────────────────────────────────────
+
+// Simple 3-byte move: actor, direction, optional step count
+etype[1, Move]:
+    - 0: byte       actorId
+    - 1: Direction  dir
+    - 2: byte?      steps = 1 [1..8]        // optional; continuous range
+
+// Item exchange: two actors, category, optional quantity
+etype[2, Transfer]:
+    - 0: byte         fromActor
+    - 1: byte         toActor
+    - 2: ItemCategory category
+    - 3: byte?        quantity = 1 [1..99]  // optional; continuous range
+
+// Scripted dialog: npc, text id (word), limited portrait index, optional flags
+etype[3, Dialog]:
+    - 0: byte  npcId
+    - 1: word  textId    [0..4095]          // word at offsets 1–2; continuous range
+    - 3: byte  portrait  [0, 1, 2, 3, 4, 5] // value list constraint
+    - 4: byte? flags = 0                    // optional
+
+// Combat action: attacker, target, damage word, status effects (named bitfield type)
+etype[4, Combat]:
+    - 0: byte          attacker
+    - 1: byte          target
+    - 2: word          damage    [0..9999]
+    - 4: StatusEffects inflicted
+
+// Teleport: actor, world coordinate (long), facing byte
+etype[5, Warp]:
+    - 0: byte  actorId
+    - 1: long  worldCoord           // 4-byte absolute coordinate
+    - 5: byte? facing = 0 [0..3]   // optional; value list would also work
+
+// ── Event Specializations ─────────────────────────────────────────────────────
+
+// North-only move, step count restricted to 1–4
+espec[1, MoveNorth]:
+    - when dir == 0
+    - 2: byte? steps = 1 [1..4]
+
+// Fast move in any direction but North, 5–8 steps
+espec[1, Dash]:
+    - when steps >= 5 and dir != 0
+
+// Give potion — small stack only (< 5)
+espec[2, GivePotion]:
+    - when category == 30 and quantity < 5
+
+// Give key — always single item; explicit default to ensure quantity = 1
+espec[2, GiveKey]:
+    - when category == 64    // 0x40 = KEY_CAT
+    - 3: byte? quantity = 1 [1..1]
+
+// Opening cutscene: low text id AND no flags set
+// Two separate when-clauses (both must hold)
+espec[3, IntroDialog]:
+    - when textId < 100
+    - when flags == 0
+    - 1: word textId    [0..99]
+    - 3: byte portrait  [0, 1, 2]   // only first 3 portraits allowed
+
+// Story dialog: high text id OR flags set (or-condition)
+espec[3, StoryDialog]:
+    - when textId >= 100 or flags != 0
+    - 1: word textId [100..4095]
+
+// Lethal blow — damage exceeds 100
+espec[4, KillingBlow]:
+    - when damage > 100
+
+// Warp to a nearby town (low map area, valid destination)
+espec[5, TownWarp]:
+    - when worldCoord < 0x10000 and facing != 3
+
+// ── Events ────────────────────────────────────────────────────────────────────
+
+// Mandatory fields only (steps uses its default of 1); HERO_ID is a constant
+event[1, HeroMovesNorth] = etype[1]
+    - actorId: HERO_ID
+    - dir: 0
+
+// Optional field provided explicitly
+event[2, HeroDashes] = etype[1]
+    - actorId: 1
+    - dir: 2
+    - steps: 6
+
+// Transfer with optional quantity provided
+event[3, MerchantGivesPotion] = etype[2]
+    - fromActor: 5
+    - toActor: 1
+    - category: 30
+    - quantity: 3
+
+// Transfer with optional quantity omitted (defaults to 1)
+event[4, GuardGivesCastleKey] = etype[2]
+    - fromActor: 8
+    - toActor: 1
+    - category: 0x40            // hex field value
+
+// Dialog — optional flags omitted
+event[5, WizardSpeaks] = etype[3]
+    - npcId: 3
+    - textId: 42
+    - portrait: 2
+
+// Dialog — all fields including optional
+event[6, KingGivesQuest] = etype[3]
+    - npcId: 1
+    - textId: 210
+    - portrait: 0
+    - flags: 1
+
+// Normal hit
+event[7, HeroHitsOrc] = etype[4]
+    - attacker: 1
+    - target: 12
+    - damage: 35
+    - inflicted: 0
+
+// Killing blow with status effect (named bitfield OR)
+event[8, HeroSlaysOrc] = etype[4]
+    - attacker: 1
+    - target: 12
+    - damage: 150
+    - inflicted: StatusEffects.Dead | StatusEffects.Poisoned
+
+// Warp — long coordinate, optional facing omitted
+event[9, HeroWarpsToTown] = etype[5]
+    - actorId: 1
+    - worldCoord: 0x00003C00
+    - facing: 2
+
+// ── Chains ────────────────────────────────────────────────────────────────────
+
+// Intro sequence: king speaks, then branch on player response
+chain[1, QuestIntro]
+    - event 6        // king speaks (always)
+    ? chain 2        // jump to QuestAccepted if event succeeded
+    ! chain 5        // jump to QuestRefused if event failed
+
+// Quest accepted: wizard hints, merchant gives potion, guard gives key
+chain[2, QuestAccepted]
+    - event 5        // wizard speaks
+    - event 3        // merchant gives potion
+    - event 4        // guard gives key
+
+// Start the boss encounter
+chain[3, BossEncounter]
+    - event 7        // hero attacks
+    ? chain 4        // boss defeated
+    ! chain BossEncounter        // miss — retry (loop back)
+
+// Boss defeated: killing blow, then warp to town
+chain[4, BossDefeated]
+    - event 8        // killing blow
+    - event 9        // warp to town
+    ? chain 1        // new quest cycle if warp succeeded
+    ! chain 5        // fallback if warp failed
+
+// Quest refused or fallback: hero moves away
+chain[5, QuestRefused]
+    - event 1        // hero walks north
+    - event 2        // hero dashes away

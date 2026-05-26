@@ -1,0 +1,11 @@
+long foo = 0x12345678;
+
+word low  = foo.w0;   // 0x5678
+word high = foo.w1;   // 0x1234
+byte b0   = foo.b0;   // 0x78
+byte b1   = foo.b1;   // 0x56
+byte b2   = foo.b2;   // 0x34
+byte b3   = foo.b3;   // 0x12
+
+word baz  = foo.w0;
+byte bar  = baz.b1;   // chained: high byte of low word = 0x56

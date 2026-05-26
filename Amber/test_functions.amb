@@ -1,0 +1,14 @@
+struct Vec2 {
+    word x;
+    word y;
+}
+
+function add(in d0: byte x, in d1: byte y, out d0: word result) {
+    word r = x + y;
+}
+
+function move(in a0: Ptr<Vec2> src, inout a1: Ptr<Vec2> dst) {
+}
+
+function clamp(inout d0: long value, in d1: long lo, in d2: long hi) {
+}

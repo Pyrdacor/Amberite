@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>amber</AssemblyName>
+    <RootNamespace>Amber.Interpreter</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Suppress vulnerability advisory for Microsoft.Build.Utilities.Core pulled in by
+         Antlr4BuildTasks. It is a build-only dependency (PrivateAssets=all) so it is never
+         part of the runtime output and the advisory does not apply to us. -->
+    <NoWarn>NU1903</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- ANTLR4 runtime -->
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
+    <!-- Build-time grammar compiler: runs antlr4 tool on .g4 files during build -->
+    <PackageReference Include="Antlr4BuildTasks" Version="12.8.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Antlr4 Include="Grammar\Amber.g4">
+      <Package>Amber.Interpreter.Grammar</Package>
+      <Listener>false</Listener>
+      <Visitor>true</Visitor>
+    </Antlr4>
+  </ItemGroup>
+
+</Project>
