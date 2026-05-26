@@ -1,0 +1,433 @@
+// Ambermoon Event Definitions — events 0x01–0x17
+//
+// Byte 0 (event type) is excluded from all etypes.
+// Offsets here are 0-based from the first data byte (doc offset 0x01 = etype offset 0).
+// A word at doc offset 0x08–0x09 maps to etype offset 7.
+
+
+// ── Shared enums ──────────────────────────────────────────────────────────────
+
+enum Direction : byte {
+    North,         // 0: up
+    East,          // 1: right
+    South,         // 2: down
+    West,          // 3: left
+    Keep,          // 4: keep current direction (used in Teleport)
+    Random = 4     // 4: random spin (used in Spinner — same underlying value)
+}
+
+enum TravelType : byte {
+    Walk,          // 0
+    Horse,         // 1
+    Raft,          // 2
+    Ship,          // 3
+    // 4–8: intermediate travel types (not documented here)
+    SandLizard = 9,
+    SandShip   = 10,
+    NoChange   = 0xff  // keep current travel type (Teleport default)
+}
+
+
+// ── Event 1 — Teleport ────────────────────────────────────────────────────────
+
+enum TransitionType : byte {
+    Normal,       // 0: map change with black fading
+    Teleporter,   // 1: instant, no fading
+    WindGate,     // 2: only works when the wind chain is active
+    LevitateUp,   // 3: levitation animation
+    Outro,        // 4: triggers outro sequence
+    FallDown      // 5: falling animation
+}
+
+etype[1, Teleport]:
+    - 0: byte            x                     // 0 = keep current x
+    - 1: byte            y                     // 0 = keep current y
+    - 2: Direction       direction
+    - 3: TravelType?     travelType = 0xff     // 0xff = no change
+    - 4: TransitionType  transitionType
+    - 5: word            mapIndex              // 0 = same map
+
+
+// ── Event 2 — Door ────────────────────────────────────────────────────────────
+
+etype[2, Door]:
+    - 0: byte    lockpickChanceReduction [0..100]
+    - 1: byte    doorIndex
+    - 2: byte?   closedTextIndex   = 0xff   // 0xff = no text
+    - 3: byte?   unlockedTextIndex = 0xff   // 0xff = no text
+    - 5: word    keyIndex
+    - 7: word?   unlockFailEventIndex = 0xffff  // 0xffff = none (trap chain)
+
+
+// ── Event 3 — Chest ───────────────────────────────────────────────────────────
+
+bitfield ChestFlags : byte {
+    JunkPile,      // bit 0: 0 = chest / 1 = junk pile
+    NoSave,        // bit 1: don't persist contents to savegame
+    ExtendedChest  // bit 2: Ambermoon Advanced extended chest pool
+}
+
+etype[3, Chest]:
+    - 0: byte        lockpickChanceReduction [0..100]
+    - 1: byte        searchCheck             [0..100]
+    - 2: byte?       openedTextIndex = 0xff  // 0xff = no text
+    - 3: byte        chestDataIndex
+    - 4: ChestFlags  flags
+    - 5: word        keyIndex
+    - 7: word?       unlockFailEventIndex = 0xffff  // 0xffff = none (trap chain)
+
+
+// ── Event 4 — Text Popup ──────────────────────────────────────────────────────
+
+enum PopupTrigger : byte {
+    None,
+    Move,
+    EyeCursor,
+    Both  // move and eye cursor
+}
+
+etype[4, TextPopup]:
+    - 0: byte?         pictureIndex    = 0xff  // 0xff = no image
+    - 1: PopupTrigger  trigger
+    - 2: byte          triggerWhenBlind [0, 1]
+    - 4: byte          textIndex
+
+
+// ── Event 5 — Spinner ─────────────────────────────────────────────────────────
+
+etype[5, Spinner]:
+    - 0: Direction  direction  // North/East/South/West or Random (= Keep = 4)
+
+
+// ── Event 6 — Trap ────────────────────────────────────────────────────────────
+
+enum TrapAilment : byte {
+    None,
+    Crazy,
+    Blind,
+    Stoned,
+    Paralyzed,
+    Poisoned,
+    Petrified,
+    Diseased,
+    ArtificialAging,
+    Dead
+}
+
+enum TrapTarget : byte {
+    ActivePlayer,
+    AllPartyMembers
+}
+
+enum Gender : byte {
+    Both       = 0,  // 0 and 3 both mean "all genders"
+    MaleOnly   = 1,
+    FemaleOnly = 2,
+    BothAlt    = 3   // alias — same meaning as Both
+}
+
+etype[6, Trap]:
+    - 0: TrapAilment  ailment
+    - 1: TrapTarget   target
+    - 2: Gender       affectedGenders
+    - 3: byte         baseDamage
+
+
+// ── Event 7 — Change Buffs ────────────────────────────────────────────────────
+
+enum Buff : byte {
+    All,
+    Light,
+    MagicAttack,
+    MagicProtection,
+    AntiMagicBarrier,
+    Clairvoyance,
+    MysticMap
+}
+
+enum BuffOperation : byte {
+    Remove,  // 0 (original behaviour)
+    Add      // 1 (Ambermoon Advanced only)
+}
+
+etype[7, ChangeBuffs]:
+    - 0: Buff           buff
+    - 1: BuffOperation  operation
+    - 3: word           buffValue   // value for added buff (Ambermoon Advanced)
+    - 5: word           duration    // duration in 5-minute chunks (Ambermoon Advanced)
+
+
+// ── Event 8 — Riddlemouth ─────────────────────────────────────────────────────
+// Bytes 2–4 are unknown and are omitted.
+
+etype[8, Riddlemouth]:
+    - 0: byte  riddleTextIndex
+    - 1: byte  solutionTextIndex
+    - 5: word  correctAnswer1  // word dictionary index
+    - 7: word  correctAnswer2  // word dictionary index (may equal correctAnswer1)
+
+
+// ── Event 9 — Reward ──────────────────────────────────────────────────────────
+
+enum RewardType : byte {
+    Attribute          = 0,
+    Ability            = 1,
+    LP                 = 2,
+    SP                 = 3,
+    SLP                = 4,
+    Ailments           = 5,
+    UsableSpellTypes   = 6,
+    Language           = 7,
+    EP                 = 8,
+    MaxAttribute       = 9,
+    AttacksPerRound    = 10,
+    TP                 = 11,
+    Level              = 12,
+    Damage             = 13,
+    Defense            = 14,
+    MaxLP              = 15,
+    MaxSP              = 16,
+    EmpowerSpellTypes  = 17,
+    ChangePortrait     = 18,
+    MaxSkill           = 19,
+    MBA                = 20,
+    MBW                = 21,
+    Spell              = 22
+}
+
+enum RewardOperation : byte {
+    Increase,
+    Decrease,
+    IncreaseByPercentage,
+    DecreaseByPercentage,
+    Fill,
+    ClearBit,
+    SetBit,
+    ToggleBit
+}
+
+enum RewardTarget : byte {
+    ActivePlayer,
+    WholeParty,
+    RandomPlayer,  // Ambermoon Advanced
+    FirstAnimal    // Ambermoon Advanced
+}
+
+etype[9, Reward]:
+    - 0: RewardType       rewardType
+    - 1: RewardOperation  operation
+    - 2: byte             random [0, 1]
+    - 3: RewardTarget     target
+    - 5: word             rewardTypeValue  // e.g. which attribute or spell index
+    - 7: word             value            // amount (HP, gold, EP, etc.)
+
+
+// ── Event 10 — Change Tile ────────────────────────────────────────────────────
+// Bytes 2–4 are unused and omitted.
+
+etype[10, ChangeTile]:
+    - 0: byte  x [1..255]
+    - 1: byte  y [1..255]
+    - 5: word  tileData
+    - 7: word  mapIndex  // 0 = same map
+
+
+// ── Event 11 — Start Battle ───────────────────────────────────────────────────
+// Bytes 0–4 are unknown and omitted.
+
+etype[11, StartBattle]:
+    - 5: word  monsterGroupIndex
+
+
+// ── Event 12 — Enter Place ────────────────────────────────────────────────────
+
+enum PlaceType : byte {
+    Trainer,     // 0
+    Healer,      // 1
+    Sage,        // 2: identifies items
+    Enchanter,   // 3
+    Inn,         // 4
+    Merchant,    // 5: goods
+    FoodDealer,  // 6
+    Library,     // 7: spell scroll dealer
+    RaftDealer,  // 8 (unused in original Ambermoon)
+    ShipDealer,  // 9
+    HorseDealer, // 10
+    Blacksmith   // 11
+}
+
+etype[12, EnterPlace]:
+    - 0: byte?      closedTextIndex = 0xff  // 0xff = place never closes / no message
+    - 1: PlaceType  placeType
+    - 2: byte       openingHour [0..23]
+    - 3: byte       closingHour [0..23]
+    - 4: byte?      usedTextIndex = 0xff    // 0xff = no message when using place
+    - 5: word       placeDataIndex          // 1-based index in Place_data
+    - 7: word       merchantDataIndex
+
+
+// ── Event 13 — Condition ──────────────────────────────────────────────────────
+
+enum ConditionType : byte {
+    GlobalVariable        = 0,
+    EventBit              = 1,
+    DoorOpen              = 2,
+    ChestOpen             = 3,
+    CharacterBit          = 4,
+    PartyMemberPresent    = 5,
+    ItemOwned             = 6,
+    UseItem               = 7,
+    KeywordKnown          = 8,
+    Success               = 9,   // chained after battles/riddlemouths/treasures
+    GameOptionSet         = 10,
+    CanSee                = 11,  // not blind, has light source
+    PlayerDirection       = 12,
+    HasAilment            = 13,
+    HandCursor            = 14,
+    SayWord               = 15,
+    EnterNumber           = 16,
+    Levitating            = 17,
+    HasGoldAmount         = 18,
+    HasFoodAmount         = 19,
+    EyeCursor             = 20,
+    MouthCursor           = 21,  // Ambermoon Advanced
+    TransportPresent      = 22,  // Ambermoon Advanced
+    MultipleCursors       = 23,  // Ambermoon Advanced
+    CurrentTravelType     = 24,  // Ambermoon Advanced
+    ActiveMemberClass     = 25,  // Ambermoon Advanced
+    SpellEmpowered        = 26,  // Ambermoon Advanced
+    IsNight               = 27,  // Ambermoon Advanced
+    ActiveMemberAttribute = 28,  // Ambermoon Advanced
+    ActiveMemberSkill     = 29,  // Ambermoon Advanced
+    CurrentMinute         = 30   // Ambermoon Advanced
+}
+
+etype[13, Condition]:
+    - 0: ConditionType  conditionType
+    - 1: byte           conditionValue [0, 1]  // 1="has/true", 0="has not/false"
+    - 2: byte           count
+    - 3: word           notAllowedAilments     // ailment bitmask (Ambermoon Advanced)
+    - 5: word           objectIndex
+    - 7: word?          nextEventIfFailed = 0xffff  // 0xffff = stop event chain
+
+
+// ── Event 14 — Action ─────────────────────────────────────────────────────────
+
+enum ActionType : byte {
+    SetGlobalVariable  = 0,
+    ChangeEventBit     = 1,
+    ChangeOpenDoor     = 2,
+    ChangeOpenChest    = 3,
+    ChangeCharacterBit = 4,
+    AddRemoveItems     = 6,
+    AddKeyword         = 8,
+    SetGameOption      = 10,
+    SetDirection       = 12,
+    AddRemoveAilment   = 13,
+    AddRemoveGold      = 18,
+    AddRemoveFood      = 19
+}
+
+enum ActionValue : byte {
+    Reset,   // 0: clear / remove
+    Set,     // 1: set / add
+    Toggle   // 2: toggle / invert
+}
+
+etype[14, Action]:
+    - 0: ActionType   actionType
+    - 1: ActionValue  actionValue
+    - 2: byte         count
+    - 5: word         objectIndex
+
+
+// ── Event 15 — Dice 100 ───────────────────────────────────────────────────────
+
+etype[15, Dice100]:
+    - 0: byte   chance [0..100]
+    - 7: word?  nextEventIfFailed = 0xffff  // 0xffff = stop on failure
+
+
+// ── Event 16 — Conversation ───────────────────────────────────────────────────
+// Bytes 1–4 are unknown and omitted.
+
+enum InteractionType : byte {
+    Keyword,    // 0
+    ShowItem,   // 1
+    GiveItem,   // 2
+    GiveGold,   // 3
+    GiveFood,   // 4
+    JoinParty,  // 5
+    LeaveParty, // 6
+    Talk,       // 7: mouth cursor / initial text
+    Leave       // 8: exit conversation
+}
+
+etype[16, Conversation]:
+    - 0: InteractionType  interactionType
+    - 5: word             value  // item index for ShowItem/GiveItem; keyword index for Keyword
+
+
+// ── Event 17 — Print Text ─────────────────────────────────────────────────────
+
+etype[17, PrintText]:
+    - 0: byte  npcMessageIndex
+
+
+// ── Event 18 — Create ─────────────────────────────────────────────────────────
+// Bytes 1–4 are unused and omitted.
+
+enum CreateType : byte {
+    Item,
+    Gold,
+    Food   // value 2 or higher means food
+}
+
+etype[18, Create]:
+    - 0: CreateType  createType
+    - 5: word        amount
+    - 7: word        itemIndex  // only relevant when createType = Item
+
+
+// ── Event 19 — Question Popup ─────────────────────────────────────────────────
+// Bytes 1–7 are unused and omitted.
+
+etype[19, QuestionPopup]:
+    - 0: byte   textIndex
+    - 7: word?  noAnswerEventIndex = 0xffff  // 0xffff = stop on 'No'
+
+
+// ── Event 20 — Change Music ───────────────────────────────────────────────────
+
+enum SoundType : byte {
+    Music   // 0 (only documented value)
+}
+
+etype[20, ChangeMusic]:
+    - 0: SoundType  soundType
+    - 1: byte?      musicIndex = 0xff  // 0 = stop; 1–32 = song; 0xff = reset to map default
+    - 2: byte?      volume     = 0xff  // 0xff = 100%; not used in original Ambermoon
+
+
+// ── Event 21 — Exit ───────────────────────────────────────────────────────────
+// No data fields — exits the current conversation immediately.
+
+etype[21, Exit]:
+
+
+// ── Event 22 — Spawn ──────────────────────────────────────────────────────────
+// Bytes 3–4 are unknown and omitted.
+// Valid travel types for spawn: Horse (1), Raft (2), Ship (3), SandLizard (9), SandShip (10).
+
+etype[22, Spawn]:
+    - 0: byte        x [1..255]
+    - 1: byte        y [1..255]
+    - 2: TravelType  travelType
+    - 5: word        mapIndex
+
+
+// ── Event 23 — Interact ───────────────────────────────────────────────────────
+// No data fields — performs the pending interaction action (remove given item/gold/food,
+// add/remove party member, etc.). Uses state from the preceding Conversation event.
+
+etype[23, Interact]:
