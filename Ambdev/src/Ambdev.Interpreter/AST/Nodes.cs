@@ -93,12 +93,18 @@ public abstract record RangeConstraintNode : AstNode;
 public record ContinuousRangeNode(long Min, long Max) : RangeConstraintNode;
 public record ValueListRangeNode(IReadOnlyList<long> Values) : RangeConstraintNode;
 
+// ── Etype reference (inside event declarations) ───────────────────────────────
+
+public abstract record EtypeRefNode : AstNode;
+public record IndexEtypeRefNode(int Index) : EtypeRefNode;
+public record NameEtypeRefNode(string Name)  : EtypeRefNode;
+
 // ── Event ─────────────────────────────────────────────────────────────────────
 
 public record EventDeclarationNode(
     int Index,
     string Name,
-    int EtypeIndex,
+    EtypeRefNode EtypeRef,
     IReadOnlyList<EventFieldNode> Fields) : AstNode;
 
 public record EventFieldNode(string FieldName, EventValueExprNode ValueExpr) : AstNode;

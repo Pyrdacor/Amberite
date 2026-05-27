@@ -185,12 +185,18 @@ public sealed class AstBuilder : AmbdevBaseVisitor<AstNode>
 
     public override AstNode VisitEventDecl(AmbdevParser.EventDeclContext ctx)
     {
-        var index    = int.Parse(ctx.INTEGER_LITERAL(0).GetText());
+        var index    = int.Parse(ctx.INTEGER_LITERAL().GetText());
         var name     = GetName(ctx.ident());
-        var etypeIdx = int.Parse(ctx.INTEGER_LITERAL(1).GetText());
+        var etypeRef = (EtypeRefNode)Visit(ctx.etypeRef());
         var fields   = ctx.eventField().Select(f => (EventFieldNode)Visit(f)).ToList();
-        return new EventDeclarationNode(index, name, etypeIdx, fields);
+        return new EventDeclarationNode(index, name, etypeRef, fields);
     }
+
+    public override AstNode VisitIndexEtypeRef(AmbdevParser.IndexEtypeRefContext ctx)
+        => new IndexEtypeRefNode(int.Parse(ctx.INTEGER_LITERAL().GetText()));
+
+    public override AstNode VisitNameEtypeRef(AmbdevParser.NameEtypeRefContext ctx)
+        => new NameEtypeRefNode(GetName(ctx.ident()));
 
     public override AstNode VisitEventField(AmbdevParser.EventFieldContext ctx)
         => new EventFieldNode(GetName(ctx.ident()), (EventValueExprNode)Visit(ctx.eventValueExpr()));

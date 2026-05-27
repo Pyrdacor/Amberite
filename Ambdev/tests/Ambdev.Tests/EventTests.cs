@@ -111,4 +111,50 @@ public class EventTests
                 "etype[1, ET]: " +
                 "event[1, A] = etype[1] " +
                 "event[1, B] = etype[1]"));
+
+    // ── etype reference by name ───────────────────────────────────────────────
+
+    [Fact]
+    public void EventByEtypeNameResolvesIndex()
+    {
+        var i = Fixture.Run(
+            "etype[12, Teleport]: - 0: byte x " +
+            "event[1, Ev] = etype[Teleport] - x: 5");
+        Assert.Equal(12, i.Event(1).EtypeIndex);
+    }
+
+    [Fact]
+    public void EventByEtypeNameFieldsValidated()
+    {
+        var i = Fixture.Run(
+            "etype[1, Move]: - 0: byte x - 1: byte y " +
+            "event[1, Ev] = etype[Move] - x: 3 - y: 7");
+        Assert.Equal(3L, i.Event(1).Fields[0].Value);
+        Assert.Equal(7L, i.Event(1).Fields[1].Value);
+    }
+
+    [Fact]
+    public void EventByEtypeNameMissingRequiredFieldThrows()
+        => Assert.Throws<AmbdevRuntimeException>(() =>
+            Fixture.Run(
+                "etype[1, Move]: - 0: byte x - 1: byte y " +
+                "event[1, Ev] = etype[Move] - x: 1"));
+
+    [Fact]
+    public void EventByEtypeNameUnknownThrows()
+        => Assert.Throws<AmbdevRuntimeException>(() =>
+            Fixture.Run("event[1, Ev] = etype[NoSuchEtype]"));
+
+    [Fact]
+    public void EventByEtypeNameAndByIndexEquivalent()
+    {
+        var byIndex = Fixture.Run(
+            "etype[7, Spinner]: - 0: byte dir " +
+            "event[1, Ev] = etype[7] - dir: 2").Event(1);
+        var byName = Fixture.Run(
+            "etype[7, Spinner]: - 0: byte dir " +
+            "event[1, Ev] = etype[Spinner] - dir: 2").Event(1);
+        Assert.Equal(byIndex.EtypeIndex, byName.EtypeIndex);
+        Assert.Equal(byIndex.Fields[0].Value, byName.Fields[0].Value);
+    }
 }

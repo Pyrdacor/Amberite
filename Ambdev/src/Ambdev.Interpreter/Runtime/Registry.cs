@@ -83,13 +83,14 @@ public record ChainInfo(
 
 public class AmbdevRegistry
 {
-    private readonly Dictionary<string, ConstantInfo>  _constants = new();
-    private readonly Dictionary<string, EnumInfo>      _enums     = new();
-    private readonly Dictionary<string, BitfieldInfo>  _bitfields = new();
-    private readonly Dictionary<int,    EtypeInfo>     _etypes    = new();
-    private readonly Dictionary<string, EspecInfo>     _especs    = new();
-    private readonly Dictionary<int,    EventInfo>     _events    = new();
-    private readonly Dictionary<int,    ChainInfo>     _chains    = new();
+    private readonly Dictionary<string, ConstantInfo>  _constants   = new();
+    private readonly Dictionary<string, EnumInfo>      _enums       = new();
+    private readonly Dictionary<string, BitfieldInfo>  _bitfields   = new();
+    private readonly Dictionary<int,    EtypeInfo>     _etypes      = new();
+    private readonly Dictionary<string, int>           _etypeByName = new();
+    private readonly Dictionary<string, EspecInfo>     _especs      = new();
+    private readonly Dictionary<int,    EventInfo>     _events      = new();
+    private readonly Dictionary<int,    ChainInfo>     _chains      = new();
 
     public IReadOnlyDictionary<string, ConstantInfo>  Constants  => _constants;
     public IReadOnlyDictionary<string, EnumInfo>      Enums      => _enums;
@@ -128,7 +129,10 @@ public class AmbdevRegistry
     {
         if (_etypes.ContainsKey(etype.Index))
             throw new AmbdevRuntimeException($"Duplicate etype index {etype.Index}");
-        _etypes[etype.Index] = etype;
+        if (_etypeByName.ContainsKey(etype.Name))
+            throw new AmbdevRuntimeException($"Duplicate etype name '{etype.Name}'");
+        _etypes[etype.Index]      = etype;
+        _etypeByName[etype.Name]  = etype.Index;
     }
 
     public void RegisterEspec(EspecInfo espec)
@@ -163,6 +167,11 @@ public class AmbdevRegistry
     public EtypeInfo GetEtype(int index)
         => _etypes.TryGetValue(index, out var e) ? e
            : throw new AmbdevRuntimeException($"Unknown etype index {index}");
+
+    public EtypeInfo GetEtypeByName(string name)
+        => _etypeByName.TryGetValue(name, out var idx)
+           ? _etypes[idx]
+           : throw new AmbdevRuntimeException($"Unknown etype name '{name}'");
 
     public EspecInfo GetEspec(string name)
         => _especs.TryGetValue(name, out var e) ? e

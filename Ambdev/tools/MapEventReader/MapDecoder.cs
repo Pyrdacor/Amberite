@@ -197,7 +197,7 @@ class MapDecoder(AmbdevRegistry registry, IReadOnlyDictionary<int, string> mapNa
             int evNum = ev.Index + 1;
             if (_registry.Etypes.TryGetValue(ev.Type, out var etype))
             {
-                sb.Append($"event[{evNum}, {EventName(ev)}] = etype[{ev.Type}]");
+                sb.Append($"event[{evNum}, {EventName(ev)}] = etype[{etype.Name}]");
                 if (etype.Fields.Count > 0)
                 {
                     sb.AppendLine();

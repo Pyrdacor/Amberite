@@ -211,7 +211,12 @@ public class AmbdevInterpreter
 
     private void RegisterEvent(EventDeclarationNode decl)
     {
-        var etype  = Registry.GetEtype(decl.EtypeIndex);
+        var etype  = decl.EtypeRef switch
+        {
+            IndexEtypeRefNode ir => Registry.GetEtype(ir.Index),
+            NameEtypeRefNode  nr => Registry.GetEtypeByName(nr.Name),
+            _ => throw new AmbdevRuntimeException($"Unknown etype ref type: {decl.EtypeRef.GetType().Name}")
+        };
         var fields = decl.Fields
             .Select(f => new EventFieldValue(f.FieldName, ResolveEventValueExpr(f.ValueExpr, decl.Index)))
             .ToList();
@@ -223,7 +228,7 @@ public class AmbdevInterpreter
                     $"Event {decl.Index}: required field '{ef.Name}' is missing");
         }
 
-        Registry.RegisterEvent(new EventInfo(decl.Index, decl.Name, decl.EtypeIndex, fields));
+        Registry.RegisterEvent(new EventInfo(decl.Index, decl.Name, etype.Index, fields));
     }
 
     private long ResolveEventValueExpr(EventValueExprNode expr, int eventIndex) => expr switch

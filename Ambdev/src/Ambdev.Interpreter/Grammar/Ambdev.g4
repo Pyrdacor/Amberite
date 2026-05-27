@@ -140,8 +140,14 @@ literal
 // ── Event Definition ──────────────────────────────────────────────────────────
 
 eventDecl
-    : EVENT LBRACKET INTEGER_LITERAL COMMA ident RBRACKET ASSIGN ETYPE LBRACKET INTEGER_LITERAL RBRACKET
+    : EVENT LBRACKET INTEGER_LITERAL COMMA ident RBRACKET ASSIGN ETYPE LBRACKET etypeRef RBRACKET
       eventField*
+    ;
+
+// etype reference inside an event declaration: by numeric index or by name
+etypeRef
+    : INTEGER_LITERAL  # indexEtypeRef
+    | ident            # nameEtypeRef
     ;
 
 eventField
