@@ -134,7 +134,7 @@ enum Gender : byte {
 etype[6, Trap]:
     - 0: TrapAilment  ailment
     - 1: TrapTarget   target
-    - 2: Gender?      affectedGenders = Gender.BothAlt
+    - 2: Gender?      affectedGenders = 3
     - 3: byte         baseDamage
 
 
@@ -409,7 +409,7 @@ enum SoundType : byte {
 }
 
 etype[20, ChangeMusic]:
-    - 0: SoundType  soundType
+    - 0: SoundType? soundType = 0
     - 1: byte?      musicIndex = 0xff  // 0 = stop; 1–32 = song; 0xff = reset to map default
     - 2: byte?      volume     = 0xff  // 0xff = 100%; not used in original Ambermoon
 
@@ -425,8 +425,8 @@ etype[21, Exit]:
 // Valid travel types for spawn: Horse (1), Raft (2), Ship (3), SandLizard (9), SandShip (10).
 
 etype[22, Spawn]:
-    - 0: byte        x [1..255]
-    - 1: byte        y [1..255]
+    - 0: byte        x [1..200]
+    - 1: byte        y [1..200]
     - 2: TravelType  travelType
     - 5: word        mapIndex
 
