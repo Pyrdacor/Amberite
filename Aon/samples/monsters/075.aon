@@ -1,0 +1,109 @@
+﻿// Source: 075
+
+[Monster] PALADINMEISTER = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Paladin
+    UsableSpellTypes             = 0
+    Level                        = 20
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 2
+    SpokenLanguages              = Languages.Human
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 2
+    SpellChancePercentage        = 100
+    MagicBonusToHit              = 1
+    MonsterMorale                = 100
+    SpellImmunity                = SpellTypes.Alchemistic
+    AttacksPerRound              = 4
+    BattleFlags                  = BattleFlags.Undead | BattleFlags.Boss
+    ElementsAndImmunities        = Elements.Undead
+    SpellLearningPoints          = 94
+    TrainingPoints               = 99
+    Gold                         = 100
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 1000
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    85, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    45, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   111, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    95, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    80, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     1, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 500
+    MaxHitPoints                 = 999
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 6
+    BonusDefense                 = 10
+    BaseAttackDamage             = 12
+    BonusAttackDamage            = 48
+    MagicAttackLevel             = 5
+    MagicDefenseLevel            = 1
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 17700
+
+    Name                         = "PALADINMEISTER"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 2 ] }    // Move
+        { FrameIndices = [ 0, 1, 2 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2 ] }    // LongAttack
+        { FrameIndices = [ 0, 3, 4 ] }    // Cast
+        { FrameIndices = [ 5, 5, 5, 5 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 3, 3, 3, 3, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 21, 3, 4, 5, 6, 3, 29, 5, 30, 31, 31, 30, 30, 31, 16, 17, 18, 19, 20, 2, 22, 23, 12, 13, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 15
+    FrameWidth                   = 64
+    FrameHeight                  = 67
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 67
+}

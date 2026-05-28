@@ -1,0 +1,90 @@
+﻿// Source: 021
+
+[Character] MILZOR = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Mystic
+    UsableSpellTypes             = SpellTypes.Mystic | SpellTypes.MasteredSpells
+    Level                        = 6
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Gnomish
+    InventoryInaccessible        = 0
+    PortraitIndex                = 12
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 60
+    TrainingPoints               = 60
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    18, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    26, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    22, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    38, Max =    50, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    10, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    11, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    30, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    46, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =     5, Max =    25, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    35, Max =    40, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    78, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    86, Max =    95, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    77, Max =    95, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 36
+    MaxHitPoints                 = 36
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 96
+    MaxSpellPoints               = 96
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 1890
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "MILZOR"
+}

@@ -1,0 +1,109 @@
+﻿// Source: 094
+
+[Monster] WÄCHTERSPINNE = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Destruction
+    Level                        = 1
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Animal
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 16
+    SpellChancePercentage        = 75
+    MagicBonusToHit              = 0
+    MonsterMorale                = 90
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = BattleFlags.Boss
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 94
+    TrainingPoints               = 99
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 360
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    35, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    95, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    95, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    25, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    12, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    55, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =     6, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    72, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =   140, Max =   198, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 140
+    MaxHitPoints                 = 198
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 78
+    MaxSpellPoints               = 99
+    BonusSpellPoints             = 0
+    BaseDefense                  = 3
+    BonusDefense                 = 1
+    BaseAttackDamage             = 27
+    BonusAttackDamage            = 2
+    MagicAttackLevel             = 2
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x00000810
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "WÄCHTERSPINNE"
+
+    Animations = [
+        { FrameIndices = [ 0, 4, 5, 6, 7, 6, 5, 4, 0, 8, 9, 10, 11, 10, 9, 8 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 2, 1, 1 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2 ] }    // Cast
+        { FrameIndices = [ 3, 3, 3, 3 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 16, 5, 3, 3, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 30, 29, 28, 27, 26, 30, 29, 5, 2, 31, 12, 13, 19, 21, 16, 17, 18, 14, 20, 15, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 8
+    FrameWidth                   = 80
+    FrameHeight                  = 54
+    MappedFrameWidth             = 80
+    MappedFrameHeight            = 54
+}

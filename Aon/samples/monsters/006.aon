@@ -1,0 +1,109 @@
+﻿// Source: 006
+
+[Monster] SKELETT = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Destruction
+    Level                        = 1
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 2
+    SpellChancePercentage        = 100
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = BattleFlags.Undead
+    ElementsAndImmunities        = Elements.Undead
+    SpellLearningPoints          = 94
+    TrainingPoints               = 99
+    Gold                         = 25
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 30
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    25, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    35, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    15, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    25, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   100, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    55, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    40, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 14
+    MaxHitPoints                 = 99
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 10
+    MaxSpellPoints               = 99
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 6
+    BaseAttackDamage             = 4
+    BonusAttackDamage            = 7
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x00000100
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 3200
+
+    Name                         = "SKELETT"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 2 ] }    // Move
+        { FrameIndices = [ 0, 1, 2 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2 ] }    // LongAttack
+        { FrameIndices = [ 0, 3, 4 ] }    // Cast
+        { FrameIndices = [ 5, 5, 5, 5 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 3, 3, 3, 3, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 15
+    FrameWidth                   = 64
+    FrameHeight                  = 67
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 67
+}

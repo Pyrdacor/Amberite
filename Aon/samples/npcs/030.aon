@@ -1,0 +1,90 @@
+﻿// Source: 030
+
+[Character] BARON_KARSTEN = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Mystic
+    UsableSpellTypes             = SpellTypes.Mystic | SpellTypes.MasteredSpells
+    Level                        = 90
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish | Languages.Sylphic | Languages.Felinic | Languages.Morag | Languages.Animal
+    InventoryInaccessible        = 0
+    PortraitIndex                = 13
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 7
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 900
+    TrainingPoints               = 900
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    39, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    41, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    39, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    36, Max =    50, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    16, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    18, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =     6, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    26, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    20, Max =    25, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    25, Max =    40, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    46, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    37, Max =    95, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    11, Max =    95, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 540
+    MaxHitPoints                 = 540
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 1440
+    MaxSpellPoints               = 1440
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 15
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 368550
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "BARON KARSTEN"
+}

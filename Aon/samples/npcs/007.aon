@@ -1,0 +1,90 @@
+﻿// Source: 007
+
+[Character] VERRÜCKTER = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Mage
+    UsableSpellTypes             = SpellTypes.Destruction
+    Level                        = 35
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human
+    InventoryInaccessible        = 0
+    PortraitIndex                = 27
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 350
+    TrainingPoints               = 350
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    28, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =     2, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    26, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    31, Max =    50, Bonus =     0, Backup =     0 }    // SPD
+        { Current =     3, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    23, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    20, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    40, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    16, Max =    35, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    16, Max =    35, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    67, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    28, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    21, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 210
+    MaxHitPoints                 = 210
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 560
+    MaxSpellPoints               = 560
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 59850
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "VERRÜCKTER"
+}

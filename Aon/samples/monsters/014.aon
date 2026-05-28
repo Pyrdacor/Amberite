@@ -1,0 +1,109 @@
+﻿// Source: 014
+
+[Monster] STEIN_GOLEM = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 2
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 9
+    SpellChancePercentage        = 90
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = Elements.Earth
+    SpellLearningPoints          = 192
+    TrainingPoints               = 198
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 200
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    80, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    25, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =     0, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    70, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 85
+    MaxHitPoints                 = 198
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 25
+    MaxSpellPoints               = 198
+    BonusSpellPoints             = 0
+    BaseDefense                  = 7
+    BonusDefense                 = 0
+    BaseAttackDamage             = 22
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 1
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x00018000
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 19800
+
+    Name                         = "STEIN GOLEM"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 0, 4 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4 ] }    // Cast
+        { FrameIndices = [ 5, 5, 5, 5 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 4, 5, 5, 5, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 0
+    FrameWidth                   = 64
+    FrameHeight                  = 80
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 80
+}

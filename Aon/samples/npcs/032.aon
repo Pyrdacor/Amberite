@@ -1,0 +1,90 @@
+﻿// Source: 032
+
+[Character] S_RIEL = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Moranian
+    Class                        = Class.Mage
+    UsableSpellTypes             = SpellTypes.Destruction
+    Level                        = 15
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Morag
+    InventoryInaccessible        = 0
+    PortraitIndex                = 87
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 150
+    TrainingPoints               = 150
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    10, Max =    40, Bonus =     0, Backup =     0 }    // STR
+        { Current =    25, Max =    95, Bonus =     0, Backup =     0 }    // INT
+        { Current =    55, Max =    75, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    50, Max =    85, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    17, Max =    40, Bonus =     0, Backup =     0 }    // STA
+        { Current =     8, Max =    15, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    18, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    57, Max =    60, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    32, Max =    65, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =     1, Max =    35, Bonus =     0, Backup =     0 }    // ATT
+        { Current =     6, Max =    35, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    36, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    45, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    70, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 90
+    MaxHitPoints                 = 90
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 240
+    MaxSpellPoints               = 240
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 15
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 11400
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "S'RIEL"
+}

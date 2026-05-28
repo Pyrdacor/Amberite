@@ -1,0 +1,109 @@
+﻿// Source: 096
+
+[Monster] GILDENDIEB = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Thief
+    UsableSpellTypes             = 0
+    Level                        = 18
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 17
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 3
+    BattleFlags                  = BattleFlags.Boss
+    ElementsAndImmunities        = Elements.Ghost
+    SpellLearningPoints          = 0
+    TrainingPoints               = 210
+    Gold                         = 100
+    Food                         = 3
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 750
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    28, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    35, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    85, Max =    95, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    10, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    75, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    70, Max =    80, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    45, Max =    50, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    95, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     2, Max =     5, Bonus =     0, Backup =     0 }    // CRI
+        { Current =    95, Max =    95, Bonus =     0, Backup =     0 }    // F-T
+        { Current =    95, Max =    95, Bonus =     0, Backup =     0 }    // D-T
+        { Current =    95, Max =    95, Bonus =     0, Backup =     0 }    // L-P
+        { Current =    75, Max =    75, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // R-M
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 120
+    MaxHitPoints                 = 120
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 4
+    BonusDefense                 = 7
+    BaseAttackDamage             = 18
+    BonusAttackDamage            = 4
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 8
+    SpellPointsPerLevel          = 0
+    SpellLearningPointsPerLevel  = 0
+    TrainingPointsPerLevel       = 14
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 20410
+
+    Name                         = "GILDENDIEB"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 2, 3, 4, 14 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] }    // Cast
+        { FrameIndices = [ 15, 15, 15, 15 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 6, 13, 13, 13, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 7, 8, 9, 6, 26, 29, 28, 27, 10, 11, 12, 13, 25, 24, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 1
+    FrameWidth                   = 48
+    FrameHeight                  = 65
+    MappedFrameWidth             = 48
+    MappedFrameHeight            = 65
+}

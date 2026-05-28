@@ -1,0 +1,109 @@
+﻿// Source: 016
+
+[Monster] ORK = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 1
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 4
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 55
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 99
+    TrainingPoints               = 99
+    Gold                         = 85
+    Food                         = 1
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 80
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    45, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    55, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    40, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    70, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    10, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =     3, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    23, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    65, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    40, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 50
+    MaxHitPoints                 = 99
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 99
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 7
+    BaseAttackDamage             = 11
+    BonusAttackDamage            = 5
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 5725
+
+    Name                         = "ORK"
+
+    Animations = [
+        { FrameIndices = [ 6, 0, 7, 8 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5 ] }    // Cast
+        { FrameIndices = [ 9, 9, 9, 9 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 4, 6, 6, 6, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 1
+    FrameWidth                   = 64
+    FrameHeight                  = 78
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 78
+}

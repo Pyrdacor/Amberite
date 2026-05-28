@@ -1,0 +1,109 @@
+﻿// Source: 065
+
+[Monster] DÄMONENBRUT = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 15
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 2
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 1
+    SpellChancePercentage        = 90
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = BattleFlags.Demon | BattleFlags.Boss
+    ElementsAndImmunities        = Elements.Fire
+    SpellLearningPoints          = 0
+    TrainingPoints               = 0
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 180
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    65, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    28, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    22, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    76, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    47, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     2, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   666, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     5, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    85, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    10, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    66, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 240
+    MaxHitPoints                 = 297
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 42
+    MaxSpellPoints               = 990
+    BonusSpellPoints             = 0
+    BaseDefense                  = 8
+    BonusDefense                 = 3
+    BaseAttackDamage             = 28
+    BonusAttackDamage            = 6
+    MagicAttackLevel             = 4
+    MagicDefenseLevel            = 2
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x008010C0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 3000
+
+    Name                         = "DÄMONENBRUT"
+
+    Animations = [
+        { FrameIndices = [ 7, 8, 9, 10, 11, 12, 13 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // Cast
+        { FrameIndices = [ 14, 14, 14, 14 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 7, 7, 7, 7, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 21, 3, 4, 5, 6, 7, 8, 9, 10, 11, 21, 22, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 0
+    FrameWidth                   = 96
+    FrameHeight                  = 67
+    MappedFrameWidth             = 96
+    MappedFrameHeight            = 67
+}

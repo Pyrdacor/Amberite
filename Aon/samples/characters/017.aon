@@ -28,7 +28,7 @@
     CharacterBitIndex            = 0x3C00
     Conditions                   = Conditions.Diseased
     MonsterExperience            = 0
-    BattleRoundSpellUsage        = 0
+    BattleRoundSpellPointUsage   = 0
     MarkOfReturnX                = 0
     MarkOfReturnY                = 0
     MarkOfReturnMapIndex         = 0

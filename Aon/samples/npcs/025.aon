@@ -1,0 +1,90 @@
+﻿// Source: 025
+
+[Character] BRALUM = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Gnome
+    Class                        = Class.Warrior
+    UsableSpellTypes             = 0
+    Level                        = 16
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Gnomish
+    InventoryInaccessible        = 0
+    PortraitIndex                = 58
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 4
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 0
+    TrainingPoints               = 128
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    43, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    22, Max =    75, Bonus =     0, Backup =     0 }    // INT
+        { Current =    10, Max =    60, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    51, Max =    60, Bonus =     0, Backup =     0 }    // SPD
+        { Current =     4, Max =    40, Bonus =     0, Backup =     0 }    // STA
+        { Current =    19, Max =    20, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    32, Max =    60, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     1, Max =    10, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   410, Max =   500, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    87, Max =    95, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    37, Max =    95, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    53, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     6, Max =    10, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // R-M
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 256
+    MaxHitPoints                 = 256
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 5
+    HitPointsPerLevel            = 16
+    SpellPointsPerLevel          = 0
+    SpellLearningPointsPerLevel  = 0
+    TrainingPointsPerLevel       = 8
+    LookTextIndex                = 0x0000
+
+    Experience                   = 20400
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "BRALUM"
+}

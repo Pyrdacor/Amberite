@@ -1,0 +1,109 @@
+﻿// Source: 089
+
+[Monster] DIOKHAR = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Alchemistic
+    Level                        = 16
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 11
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = SpellTypes.Healing
+    AttacksPerRound              = 1
+    BattleFlags                  = BattleFlags.Undead | BattleFlags.Boss
+    ElementsAndImmunities        = Elements.Undead
+    SpellLearningPoints          = 94
+    TrainingPoints               = 99
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 750
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    32, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    61, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    38, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    23, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    34, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     3, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    16, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =    10, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   240, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    55, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    10, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    70, Max =    99, Bonus =    25, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 300
+    MaxHitPoints                 = 396
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 65
+    MaxSpellPoints               = 99
+    BonusSpellPoints             = 35
+    BaseDefense                  = 8
+    BonusDefense                 = 6
+    BaseAttackDamage             = 2
+    BonusAttackDamage            = 32
+    MagicAttackLevel             = 2
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0x40000040
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 4300
+
+    Name                         = "DIOKHAR"
+
+    Animations = [
+        { FrameIndices = [ 0, 10, 11, 12, 13 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ] }    // Cast
+        { FrameIndices = [ 9, 9, 9, 9 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 5, 9, 9, 9, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 30, 31, 18, 19, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 15
+    FrameWidth                   = 64
+    FrameHeight                  = 68
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 68
+}

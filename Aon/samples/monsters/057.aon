@@ -1,0 +1,109 @@
+﻿// Source: 057
+
+[Monster] GIZZEK_KÖNIGIN = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Female
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 20
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 24
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 85
+    SpellImmunity                = 0
+    AttacksPerRound              = 3
+    BattleFlags                  = 0
+    ElementsAndImmunities        = Elements.Wind
+    SpellLearningPoints          = 1960
+    TrainingPoints               = 1980
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 500
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    80, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    65, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    45, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    12, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    85, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    80, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     2, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 400
+    MaxHitPoints                 = 1980
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 80
+    MaxSpellPoints               = 1980
+    BonusSpellPoints             = 0
+    BaseDefense                  = 22
+    BonusDefense                 = 0
+    BaseAttackDamage             = 65
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 2
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x00200008
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "GIZZEK-KÖNIGIN"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 2 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 7, 2, 7, 1 ] }    // Cast
+        { FrameIndices = [ 6, 6, 6, 6 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 3, 7, 7, 7, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 18, 19, 20, 10, 11, 12, 13, 14, 15, 11, 10, 7, 8, 9, 6, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 1
+    FrameWidth                   = 96
+    FrameHeight                  = 75
+    MappedFrameWidth             = 128
+    MappedFrameHeight            = 87
+}

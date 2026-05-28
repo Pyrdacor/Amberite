@@ -8,7 +8,7 @@ internal sealed class CharacterValue
     public ushort Backup  { get; set; }
 }
 
-internal sealed class CharacterData
+internal class CharacterData
 {
     // 0x0000–0x0013
     public byte CharacterType         { get; set; }

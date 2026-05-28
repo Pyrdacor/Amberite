@@ -1,0 +1,109 @@
+﻿// Source: 052
+
+[Monster] HAUPTWÄCHTER = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 15
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 21
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 1425
+    TrainingPoints               = 1485
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 800
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   999, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    95, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 550
+    MaxHitPoints                 = 1485
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 100
+    MaxSpellPoints               = 1485
+    BonusSpellPoints             = 0
+    BaseDefense                  = 25
+    BonusDefense                 = 0
+    BaseAttackDamage             = 95
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x07000000
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "HAUPTWÄCHTER"
+
+    Animations = [
+        { FrameIndices = [ 1, 15, 16, 15 ] }    // Move
+        { FrameIndices = [ 1, 1, 0, 0, 0, 1, 1, 2, 3, 3, 3, 2, 2 ] }    // ShortAttack
+        { FrameIndices = [ 0 ] }    // LongAttack
+        { FrameIndices = [ 4, 5, 6, 6, 6, 5, 5, 4, 4 ] }    // Cast
+        { FrameIndices = [ 17, 17, 17, 17 ] }    // Hurt
+        { FrameIndices = [ 1, 14, 13, 12, 11, 10, 9, 8, 7 ] }    // Die
+        { FrameIndices = [ 7, 7, 8, 9, 10, 11, 12, 13, 14 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 4, 13, 0, 9, 3, 9, 9, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 0
+    FrameWidth                   = 64
+    FrameHeight                  = 80
+    MappedFrameWidth             = 96
+    MappedFrameHeight            = 120
+}

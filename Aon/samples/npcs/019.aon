@@ -1,0 +1,90 @@
+﻿// Source: 019
+
+[Character] MICHAEL = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Adventurer
+    UsableSpellTypes             = 0
+    Level                        = 0
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human
+    InventoryInaccessible        = 0
+    PortraitIndex                = 3
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 0
+    TrainingPoints               = 0
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =     2, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =     2, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    12, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    38, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    13, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    48, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    29, Max =    85, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    58, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    74, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    44, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     3, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =    19, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =    16, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     8, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    38, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    39, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 1
+    MaxHitPoints                 = 1
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 2
+    HitPointsPerLevel            = 15
+    SpellPointsPerLevel          = 0
+    SpellLearningPointsPerLevel  = 0
+    TrainingPointsPerLevel       = 5
+    LookTextIndex                = 0x0000
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "MICHAEL"
+}

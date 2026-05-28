@@ -1,0 +1,90 @@
+﻿// Source: 035
+
+[Character] SANDIRE = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Female
+    Race                         = Race.Elf
+    Class                        = Class.Ranger
+    UsableSpellTypes             = SpellTypes.Mystic
+    Level                        = 6
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Elfish
+    InventoryInaccessible        = 0
+    PortraitIndex                = 73
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 18
+    TrainingPoints               = 72
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    15, Max =    35, Bonus =     0, Backup =     0 }    // STR
+        { Current =    20, Max =    90, Bonus =     0, Backup =     0 }    // INT
+        { Current =    43, Max =    70, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    48, Max =    70, Bonus =     0, Backup =     0 }    // SPD
+        { Current =     3, Max =    35, Bonus =     0, Backup =     0 }    // STA
+        { Current =    10, Max =    90, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    16, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     2, Max =    30, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   185, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    54, Max =    70, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    57, Max =    60, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    80, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     2, Max =     5, Bonus =     0, Backup =     0 }    // CRI
+        { Current =    26, Max =    40, Bonus =     0, Backup =     0 }    // F-T
+        { Current =    15, Max =    40, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     9, Max =    15, Bonus =     0, Backup =     0 }    // L-P
+        { Current =    35, Max =    95, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    46, Max =    50, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    19, Max =    50, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 72
+    MaxHitPoints                 = 72
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 36
+    MaxSpellPoints               = 36
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 10
+    HitPointsPerLevel            = 12
+    SpellPointsPerLevel          = 6
+    SpellLearningPointsPerLevel  = 3
+    TrainingPointsPerLevel       = 12
+    LookTextIndex                = 0x0000
+
+    Experience                   = 2625
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "SANDIRE"
+}

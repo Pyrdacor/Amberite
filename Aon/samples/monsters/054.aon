@@ -1,0 +1,109 @@
+﻿// Source: 054
+
+[Monster] TORNAK = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 10
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 23
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 2
+    MonsterMorale                = 65
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = Elements.Earth
+    SpellLearningPoints          = 990
+    TrainingPoints               = 990
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 400
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    70, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    80, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    10, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =     8, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    85, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 285
+    MaxHitPoints                 = 990
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 990
+    BonusSpellPoints             = 0
+    BaseDefense                  = 18
+    BonusDefense                 = 0
+    BaseAttackDamage             = 70
+    BonusAttackDamage            = 15
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "TORNAK"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 2, 1 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 3, 4, 5, 6, 7, 8, 8, 7, 8 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1 ] }    // LongAttack
+        { FrameIndices = [ 0, 2 ] }    // Cast
+        { FrameIndices = [ 0, 8, 8 ] }    // Hurt
+        { FrameIndices = [ 0, 1 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 5, 10, 2, 2, 3, 2, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 0
+    FrameWidth                   = 96
+    FrameHeight                  = 88
+    MappedFrameWidth             = 96
+    MappedFrameHeight            = 88
+}

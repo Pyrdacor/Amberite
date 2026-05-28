@@ -4,16 +4,20 @@ using Ambermoon.Aon.Tools;
 if (args.Length == 0)
 {
     Console.Error.WriteLine("Commands:");
-    Console.Error.WriteLine("  chars   <source-dir> <output-dir>          Convert binary party_char files to AON");
-    Console.Error.WriteLine("  compile <schema.aod> <data.aon> <out-dir>  Compile AON to binary files");
+    Console.Error.WriteLine("  chars    <source-dir> <output-dir>          Convert binary party_char files to AON");
+    Console.Error.WriteLine("  npcs     <source-dir> <output-dir>          Convert binary NPC_char files to AON");
+    Console.Error.WriteLine("  monsters <source-dir> <output-dir>          Convert binary Monster_char files to AON");
+    Console.Error.WriteLine("  compile  <schema.aod> <data.aon> <out-dir>  Compile AON to binary files");
     return 1;
 }
 
 return args[0] switch
 {
-    "chars"   => RunChars(args[1..]),
-    "compile" => RunCompile(args[1..]),
-    var cmd   => Error($"Unknown command: {cmd}"),
+    "chars"    => RunChars(args[1..]),
+    "npcs"     => RunNpcs(args[1..]),
+    "monsters" => RunMonsters(args[1..]),
+    "compile"  => RunCompile(args[1..]),
+    var cmd    => Error($"Unknown command: {cmd}"),
 };
 
 // ── chars ────────────────────────────────────────────────────────────────────
@@ -40,6 +44,76 @@ static int RunChars(string[] args)
             var charData = CharacterReader.Read(data);
             File.WriteAllText(outPath, CharacterAonWriter.Write(charData, fileName), System.Text.Encoding.UTF8);
             Console.WriteLine($"  OK    {fileName}  →  {Path.GetFileName(outPath)}  ({charData.Name})");
+            ok++;
+        }
+        catch (Exception ex) { Console.Error.WriteLine($"  ERROR {fileName}: {ex.Message}"); errors++; }
+    }
+
+    Console.WriteLine($"\nDone: {ok} converted, {errors} errors.");
+    return errors > 0 ? 1 : 0;
+}
+
+// ── npcs ─────────────────────────────────────────────────────────────────────
+
+static int RunNpcs(string[] args)
+{
+    if (args.Length < 1) return Error("Usage: npcs <source-dir> [output-dir]");
+
+    var sourceDir = args[0];
+    var outputDir = args.Length >= 2 ? args[1] : args[0];
+
+    if (!Directory.Exists(sourceDir)) return Error($"Source directory not found: {sourceDir}");
+    Directory.CreateDirectory(outputDir);
+
+    int ok = 0, errors = 0;
+    foreach (var filePath in Directory.GetFiles(sourceDir).OrderBy(f => f))
+    {
+        var fileName = Path.GetFileName(filePath);
+        var outPath  = Path.Combine(outputDir, fileName + ".aon");
+        try
+        {
+            var data = File.ReadAllBytes(filePath);
+            // NPC files contain character data (0x0122 bytes) followed by event data.
+            // We only read the character portion; event data is out of scope here.
+            if (data.Length < 0x0122) { Console.Error.WriteLine($"  SKIP  {fileName}  (too small: {data.Length} bytes)"); continue; }
+            var charData = CharacterReader.Read(data);
+            var label    = string.IsNullOrEmpty(charData.Name) ? fileName : charData.Name;
+            File.WriteAllText(outPath, CharacterAonWriter.Write(charData, fileName), System.Text.Encoding.UTF8);
+            Console.WriteLine($"  OK    {fileName}  →  {Path.GetFileName(outPath)}  ({label})");
+            ok++;
+        }
+        catch (Exception ex) { Console.Error.WriteLine($"  ERROR {fileName}: {ex.Message}"); errors++; }
+    }
+
+    Console.WriteLine($"\nDone: {ok} converted, {errors} errors.");
+    return errors > 0 ? 1 : 0;
+}
+
+// ── monsters ─────────────────────────────────────────────────────────────────
+
+static int RunMonsters(string[] args)
+{
+    if (args.Length < 1) return Error("Usage: monsters <source-dir> [output-dir]");
+
+    var sourceDir = args[0];
+    var outputDir = args.Length >= 2 ? args[1] : args[0];
+
+    if (!Directory.Exists(sourceDir)) return Error($"Source directory not found: {sourceDir}");
+    Directory.CreateDirectory(outputDir);
+
+    int ok = 0, errors = 0;
+    foreach (var filePath in Directory.GetFiles(sourceDir).OrderBy(f => f))
+    {
+        var fileName = Path.GetFileName(filePath);
+        var outPath  = Path.Combine(outputDir, fileName + ".aon");
+        try
+        {
+            var data = File.ReadAllBytes(filePath);
+            if (data.Length < 0x032A) { Console.Error.WriteLine($"  SKIP  {fileName}  (too small: {data.Length} bytes)"); continue; }
+            var monsterData = CharacterReader.ReadMonster(data);
+            var label       = string.IsNullOrEmpty(monsterData.Name) ? fileName : monsterData.Name;
+            File.WriteAllText(outPath, CharacterAonWriter.WriteMonster(monsterData, fileName), System.Text.Encoding.UTF8);
+            Console.WriteLine($"  OK    {fileName}  →  {Path.GetFileName(outPath)}  ({label})");
             ok++;
         }
         catch (Exception ex) { Console.Error.WriteLine($"  ERROR {fileName}: {ex.Message}"); errors++; }

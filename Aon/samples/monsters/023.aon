@@ -1,0 +1,109 @@
+﻿// Source: 023
+
+[Monster] FEUERDRACHE = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 2
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 15
+    SpellChancePercentage        = 100
+    MagicBonusToHit              = 0
+    MonsterMorale                = 95
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = Elements.Fire
+    SpellLearningPoints          = 168
+    TrainingPoints               = 198
+    Gold                         = 500
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 1000
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    70, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    65, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    76, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    25, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   333, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup = 65486 }
+
+    Abilities = [
+        { Current =    76, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    60, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     2, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 130
+    MaxHitPoints                 = 198
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 130
+    MaxSpellPoints               = 198
+    BonusSpellPoints             = 0
+    BaseDefense                  = 8
+    BonusDefense                 = 0
+    BaseAttackDamage             = 20
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 2
+    MagicDefenseLevel            = 1
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x02800000
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 5000
+
+    Name                         = "FEUERDRACHE"
+
+    Animations = [
+        { FrameIndices = [ 0, 4, 5, 0, 6 ] }    // Move
+        { FrameIndices = [ 0, 1, 2 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2 ] }    // Cast
+        { FrameIndices = [ 3, 3, 3, 3 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 5, 3, 3, 3, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 8
+    FrameWidth                   = 64
+    FrameHeight                  = 84
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 84
+}

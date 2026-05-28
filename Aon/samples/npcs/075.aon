@@ -1,0 +1,90 @@
+﻿// Source: 075
+
+[Character] BROGAT = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Dwarf
+    Class                        = Class.Adventurer
+    UsableSpellTypes             = 0
+    Level                        = 2
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish | Languages.Sylphic | Languages.Felinic | Languages.Morag | Languages.Animal
+    InventoryInaccessible        = 0
+    PortraitIndex                = 106
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 0
+    TrainingPoints               = 30
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    29, Max =    90, Bonus =     0, Backup =     0 }    // STR
+        { Current =    21, Max =    35, Bonus =     0, Backup =     0 }    // INT
+        { Current =    35, Max =    40, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    21, Max =    40, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    45, Max =    90, Bonus =     0, Backup =     0 }    // STA
+        { Current =     1, Max =    35, Bonus =     0, Backup =     0 }    // CHA
+        { Current =     4, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     2, Max =     5, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    92, Max =   750, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    33, Max =    75, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    23, Max =    75, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    59, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =    24, Max =    25, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     2, Max =    25, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     1, Max =    25, Bonus =     0, Backup =     0 }    // L-P
+        { Current =    13, Max =    25, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    39, Max =    50, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    45, Max =    50, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 50
+    MaxHitPoints                 = 50
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 12
+    HitPointsPerLevel            = 10
+    SpellPointsPerLevel          = 0
+    SpellLearningPointsPerLevel  = 0
+    TrainingPointsPerLevel       = 6
+    LookTextIndex                = 0x0000
+
+    Experience                   = 1125
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "BROGAT"
+}

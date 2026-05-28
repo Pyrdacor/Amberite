@@ -1,0 +1,90 @@
+﻿// Source: 003
+
+[Character] AMAN = {
+    Type                         = CharacterType.NPC
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Thief
+    UsableSpellTypes             = 0
+    Level                        = 5
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish | Languages.Sylphic
+    InventoryInaccessible        = 0
+    PortraitIndex                = 14
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 0
+    TrainingPoints               = 70
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    39, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    48, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    34, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =     6, Max =    50, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    43, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    36, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    45, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    36, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    38, Max =    50, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    46, Max =    50, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    65, Max =    95, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     1, Max =     5, Bonus =     0, Backup =     0 }    // CRI
+        { Current =    64, Max =    95, Bonus =     0, Backup =     0 }    // F-T
+        { Current =    57, Max =    95, Bonus =     0, Backup =     0 }    // D-T
+        { Current =    50, Max =    95, Bonus =     0, Backup =     0 }    // L-P
+        { Current =    19, Max =    75, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // R-M
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 40
+    MaxHitPoints                 = 40
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 8
+    SpellPointsPerLevel          = 0
+    SpellLearningPointsPerLevel  = 0
+    TrainingPointsPerLevel       = 14
+    LookTextIndex                = 0x0000
+
+    Experience                   = 1500
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "AMAN"
+}

@@ -1,0 +1,109 @@
+﻿// Source: 037
+
+[Monster] IMP = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 1
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 1
+    SpellChancePercentage        = 100
+    MagicBonusToHit              = 0
+    MonsterMorale                = 60
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = BattleFlags.Demon
+    ElementsAndImmunities        = Elements.Wind
+    SpellLearningPoints          = 13
+    TrainingPoints               = 99
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 200
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    29, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    26, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    62, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    38, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    72, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    62, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   254, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup = 65496 }
+
+    Abilities = [
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 75
+    MaxHitPoints                 = 99
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 70
+    MaxSpellPoints               = 99
+    BonusSpellPoints             = 0
+    BaseDefense                  = 5
+    BonusDefense                 = 0
+    BaseAttackDamage             = 20
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 1
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x0019BED0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "IMP"
+
+    Animations = [
+        { FrameIndices = [ 7, 8, 9, 10, 11, 12, 13 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // Cast
+        { FrameIndices = [ 14, 14, 14, 14 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 7, 7, 7, 7, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 9, 6, 29, 28, 27, 10, 11, 7, 8, 25, 24, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 0
+    FrameWidth                   = 96
+    FrameHeight                  = 67
+    MappedFrameWidth             = 96
+    MappedFrameHeight            = 67
+}

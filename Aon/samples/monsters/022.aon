@@ -1,0 +1,109 @@
+﻿// Source: 022
+
+[Monster] FEUERRIESE = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction | SpellTypes.IncreasedFireSpellDamage
+    Level                        = 3
+    NumOccupiedHands             = 1
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 6
+    SpellChancePercentage        = 100
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = Elements.Fire
+    SpellLearningPoints          = 272
+    TrainingPoints               = 297
+    Gold                         = 289
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 600
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    92, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    20, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    35, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    16, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    10, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    33, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup = 65486 }
+
+    Abilities = [
+        { Current =    65, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     1, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 120
+    MaxHitPoints                 = 297
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 100
+    MaxSpellPoints               = 297
+    BonusSpellPoints             = 0
+    BaseDefense                  = 3
+    BonusDefense                 = 5
+    BaseAttackDamage             = 21
+    BonusAttackDamage            = 5
+    MagicAttackLevel             = 1
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x01800000
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 5590
+
+    Name                         = "FEUERRIESE"
+
+    Animations = [
+        { FrameIndices = [ 0, 8, 9, 10, 11, 12 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4, 5, 6 ] }    // Cast
+        { FrameIndices = [ 7, 7, 7, 7 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 6, 7, 7, 7, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 1
+    FrameWidth                   = 64
+    FrameHeight                  = 64
+    MappedFrameWidth             = 96
+    MappedFrameHeight            = 96
+}

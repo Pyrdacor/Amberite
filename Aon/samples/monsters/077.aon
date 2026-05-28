@@ -1,0 +1,109 @@
+﻿// Source: 077
+
+[Monster] WÜSTENGOLEM = {
+    Type                         = CharacterType.Monster
+    Gender                       = Gender.Female
+    Race                         = Race.Monster
+    Class                        = Class.Monster
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.Alchemistic | SpellTypes.Mystic | SpellTypes.Destruction
+    Level                        = 16
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 2
+    SpokenLanguages              = 0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 0
+    MonsterFlags                 = 0
+    CombatGraphicIndex           = 9
+    SpellChancePercentage        = 100
+    MagicBonusToHit              = 0
+    MonsterMorale                = 100
+    SpellImmunity                = 0
+    AttacksPerRound              = 4
+    BattleFlags                  = BattleFlags.Boss
+    ElementsAndImmunities        = Elements.Earth
+    SpellLearningPoints          = 0
+    TrainingPoints               = 0
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 600
+    BattleRoundSpellPointUsage   = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    95, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    15, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    30, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    55, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    95, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =     5, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    25, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =     0, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     1, Max =     3, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    90, Max =    99, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    65, Max =    99, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     1, Max =    99, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    85, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 420
+    MaxHitPoints                 = 594
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 80
+    MaxSpellPoints               = 99
+    BonusSpellPoints             = 0
+    BaseDefense                  = 13
+    BonusDefense                 = 8
+    BaseAttackDamage             = 50
+    BonusAttackDamage            = 5
+    MagicAttackLevel             = 4
+    MagicDefenseLevel            = 1
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 99
+    SpellPointsPerLevel          = 99
+    SpellLearningPointsPerLevel  = 99
+    TrainingPointsPerLevel       = 99
+    LookTextIndex                = 0xFFFF
+
+    Experience                   = 0
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x00030000
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 19880
+
+    Name                         = "WÜSTENGOLEM"
+
+    Animations = [
+        { FrameIndices = [ 0, 1, 0, 4 ] }    // Move
+        { FrameIndices = [ 0, 1, 2, 3, 4 ] }    // ShortAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4 ] }    // LongAttack
+        { FrameIndices = [ 0, 1, 2, 3, 4 ] }    // Cast
+        { FrameIndices = [ 5, 5, 5, 5 ] }    // Hurt
+        { FrameIndices = [ 0 ] }    // Die
+        { FrameIndices = [ 0 ] }    // StartAnim
+        { FrameIndices = [ 0 ] }    // Unknown
+    ]
+    FrameCounts                  = [ 4, 5, 5, 5, 4, 0, 0, 0 ]
+    AtariPalette                 = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+    AmigaPalette                 = [ 0, 1, 11, 10, 7, 6, 26, 7, 8, 9, 10, 11, 28, 27, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+    AnimationDirectionFlags      = 0
+    FrameWidth                   = 64
+    FrameHeight                  = 80
+    MappedFrameWidth             = 64
+    MappedFrameHeight            = 80
+}

@@ -30,10 +30,10 @@ internal static class CharacterAonWriter
 
     private static readonly (int Bit, string Name)[] LanguageFlags =
     [
-        (0x01, "Languages.Human"),   (0x02, "Languages.Elfish"),
-        (0x04, "Languages.Dwarfish"),(0x08, "Languages.Gnomish"),
-        (0x10, "Languages.Sylphic"), (0x20, "Languages.Felinic"),
-        (0x40, "Languages.Morag"),   (0x80, "Languages.Animal"),
+        (0x01, "Languages.Human"),    (0x02, "Languages.Elfish"),
+        (0x04, "Languages.Dwarfish"), (0x08, "Languages.Gnomish"),
+        (0x10, "Languages.Sylphic"),  (0x20, "Languages.Felinic"),
+        (0x40, "Languages.Morag"),    (0x80, "Languages.Animal"),
     ];
 
     private static readonly (int Bit, string Name)[] BattleFlagFlags =
@@ -64,19 +64,35 @@ internal static class CharacterAonWriter
         (0x4000, "Conditions.DeadAshes"), (0x8000, "Conditions.DeadDust"),
     ];
 
+    private static readonly (int Bit, string Name)[] AdvancedMonsterFlagFlags =
+    [
+        (0x01, "AdvancedMonsterFlags.ImmuneNoElement"), (0x02, "AdvancedMonsterFlags.Unused"),
+        (0x04, "AdvancedMonsterFlags.ImmuneGhost"),     (0x08, "AdvancedMonsterFlags.ImmuneUndead"),
+        (0x10, "AdvancedMonsterFlags.ImmuneEarth"),     (0x20, "AdvancedMonsterFlags.ImmuneWind"),
+        (0x40, "AdvancedMonsterFlags.ImmuneFire"),      (0x80, "AdvancedMonsterFlags.ImmuneWater"),
+    ];
+
     private static readonly string[] AttributeNames = ["STR", "INT", "DEX", "SPD", "STA", "CHA", "LUK", "A-M"];
     private static readonly string[] AbilityNames   = ["ATT", "PAR", "SWI", "CRI", "F-T", "D-T", "L-P", "SRC", "R-M", "U-M"];
+    private static readonly string[] AnimationNames = ["Move", "ShortAttack", "LongAttack", "Cast", "Hurt", "Die", "StartAnim", "Unknown"];
 
     // ────────────────────────────────────────────────────────────────────────
 
-    public static string Write(CharacterData c, string sourceFile)
+    public static string Write(CharacterData c, string sourceFile) =>
+        WriteCore(c, false, null, sourceFile);
+
+    public static string WriteMonster(MonsterData m, string sourceFile) =>
+        WriteCore(m, true, m, sourceFile);
+
+    private static string WriteCore(CharacterData c, bool isMonster, MonsterData? md, string sourceFile)
     {
         var sb = new StringBuilder();
         sb.AppendLine($"// Source: {sourceFile}");
         sb.AppendLine();
 
+        var typeName     = isMonster ? "Monster" : "Character";
         var instanceName = SanitizeIdent(c.Name);
-        sb.AppendLine($"[Character] {instanceName} = {{");
+        sb.AppendLine($"[{typeName}] {instanceName} = {{");
 
         Field(sb, "Type",                   Enum(c.CharacterType, CharacterTypes));
         Field(sb, "Gender",                 Enum(c.Gender, Genders));
@@ -89,7 +105,13 @@ internal static class CharacterAonWriter
         Field(sb, "SpokenLanguages",        Bitfield(c.SpokenLanguages, LanguageFlags));
         Field(sb, "InventoryInaccessible",  c.InventoryInaccessible.ToString());
         Field(sb, "PortraitIndex",          c.PortraitIndex.ToString());
-        Field(sb, "JoinPercentage",         c.JoinPercentage.ToString());
+
+        // 0x000B: JoinPercentage for party/NPCs; MonsterFlags for monsters
+        if (isMonster)
+            Field(sb, "MonsterFlags",       Bitfield(c.JoinPercentage, AdvancedMonsterFlagFlags));
+        else
+            Field(sb, "JoinPercentage",     c.JoinPercentage.ToString());
+
         Field(sb, "CombatGraphicIndex",     c.CombatGraphicIndex.ToString());
         Field(sb, "SpellChancePercentage",  c.SpellChancePercentage.ToString());
         Field(sb, "MagicBonusToHit",        c.MagicBonusToHit.ToString());
@@ -105,7 +127,7 @@ internal static class CharacterAonWriter
         Field(sb, "CharacterBitIndex",      Hex16(c.CharacterBitIndex));
         Field(sb, "Conditions",             Bitfield(c.Conditions, ConditionFlags));
         Field(sb, "MonsterExperience",      c.MonsterExperience.ToString());
-        Field(sb, "BattleRoundSpellUsage",  c.BattleRoundSpellUsage.ToString());
+        Field(sb, "BattleRoundSpellPointUsage", c.BattleRoundSpellUsage.ToString());
         Field(sb, "MarkOfReturnX",          c.MarkOfReturnX.ToString());
         Field(sb, "MarkOfReturnY",          c.MarkOfReturnY.ToString());
         Field(sb, "MarkOfReturnMapIndex",   c.MarkOfReturnMapIndex.ToString());
@@ -157,6 +179,30 @@ internal static class CharacterAonWriter
         sb.AppendLine();
         Field(sb, "Name",                     $"\"{EscapeString(c.Name)}\"");
 
+        // ── monster-specific animation section ───────────────────────────────
+        if (isMonster && md != null)
+        {
+            sb.AppendLine();
+            sb.AppendLine("    Animations = [");
+            for (int i = 0; i < 8; i++)
+            {
+                var frames = md.Animations[i].FrameIndices;
+                int usedLen = frames.Length;
+                while (usedLen > 1 && frames[usedLen - 1] == 0) usedLen--;
+                sb.AppendLine($"        {{ FrameIndices = [ {string.Join(", ", frames.Take(usedLen))} ] }}    // {AnimationNames[i]}");
+            }
+            sb.AppendLine("    ]");
+
+            sb.AppendLine($"    FrameCounts                  = [ {string.Join(", ", md.FrameCounts)} ]");
+            sb.AppendLine($"    AtariPalette                 = [ {string.Join(", ", md.AtariPalette)} ]");
+            sb.AppendLine($"    AmigaPalette                 = [ {string.Join(", ", md.AmigaPalette)} ]");
+            Field(sb, "AnimationDirectionFlags",  md.AnimationDirectionFlags.ToString());
+            Field(sb, "FrameWidth",               md.FrameWidth.ToString());
+            Field(sb, "FrameHeight",              md.FrameHeight.ToString());
+            Field(sb, "MappedFrameWidth",         md.MappedFrameWidth.ToString());
+            Field(sb, "MappedFrameHeight",        md.MappedFrameHeight.ToString());
+        }
+
         sb.AppendLine("}");
         return sb.ToString();
     }
@@ -201,7 +247,7 @@ internal static class CharacterAonWriter
     private static string SanitizeIdent(string name)
     {
         if (string.IsNullOrWhiteSpace(name)) return "Unknown";
-        var sb = new System.Text.StringBuilder();
+        var sb = new StringBuilder();
         foreach (char c in name)
             sb.Append(char.IsLetterOrDigit(c) ? c : '_');
         if (sb.Length == 0 || !char.IsLetter(sb[0]))
