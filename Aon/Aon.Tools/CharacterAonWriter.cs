@@ -64,7 +64,7 @@ internal static class CharacterAonWriter
         sb.AppendLine($"// Source: {sourceFile}");
         sb.AppendLine();
 
-        var instanceName = string.IsNullOrEmpty(c.Name) ? "Unknown" : c.Name;
+        var instanceName = SanitizeIdent(c.Name);
         sb.AppendLine($"[Character] {instanceName} = {{");
 
         Field(sb, "Type",                   Enum(c.CharacterType, CharacterTypes));
@@ -186,4 +186,15 @@ internal static class CharacterAonWriter
 
     private static string EscapeString(string s) =>
         s.Replace("\\", "\\\\").Replace("\"", "\\\"");
+
+    private static string SanitizeIdent(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) return "Unknown";
+        var sb = new System.Text.StringBuilder();
+        foreach (char c in name)
+            sb.Append(char.IsLetterOrDigit(c) ? c : '_');
+        if (sb.Length == 0 || !char.IsLetter(sb[0]))
+            sb.Insert(0, '_');
+        return sb.ToString();
+    }
 }

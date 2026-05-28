@@ -14,9 +14,9 @@ instance
     : '[' typeName=IDENT ']' name=IDENT '=' '{' field* '}'
     ;
 
-// FieldName = value
+// FieldName = value [,]  — trailing comma is optional (allows both inline and multi-line styles)
 field
-    : fieldName=IDENT '=' value
+    : fieldName=IDENT '=' value ','?
     ;
 
 // Values — | is the lowest-precedence operator (bitfield flag combination)
@@ -29,8 +29,9 @@ value
     | '[' arrayItems? ']'          # arrayValue
     ;
 
+// Commas between items are optional so both "[ a, b, c ]" and multi-line no-comma styles work
 arrayItems
-    : value (',' value)* ','?
+    : value (','? value)* ','?
     ;
 
 // A.B or just A

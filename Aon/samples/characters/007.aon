@@ -1,6 +1,6 @@
 ﻿// Source: 007
 
-[Character] TAR DER DUNKLE = {
+[Character] TAR_DER_DUNKLE = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
     Race                         = Race.Human

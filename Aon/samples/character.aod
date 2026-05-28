@@ -1,5 +1,5 @@
 // Ambermoon character data format definitions
-// Source: Characters.md (Party_char.amb, NPC_char.amb, Monster_char_data.amb)
+// Source: Characters.md (Party_char.amb, NPC_char.amb, Monster_char.amb)
 // All multi-byte values are big-endian.
 
 enum CharacterType : ubyte {
@@ -115,7 +115,7 @@ struct CharacterValue {
 // ---------------------------------------------------------------
 // Base character record (offsets are from the start of the record)
 // ---------------------------------------------------------------
-struct Character {
+struct Character [Size = 0x0122] {
     [0x0000]
     CharacterType Type
     Gender Gender
@@ -129,64 +129,64 @@ struct Character {
     ubyte InventoryInaccessible
     ubyte PortraitIndex
     [0x000B]
-    ubyte JoinPercentage          // 0 = will never join; only used in Amberstar
-    ubyte CombatGraphicIndex      // monsters only
-    ubyte SpellChancePercentage   // monsters only (unused in Ambermoon)
-    ubyte MagicBonusToHit         // monsters only (unused in Ambermoon)
-    ubyte MonsterMorale           // retreat chance; 100 = never flee
-    SpellTypes SpellImmunity
+    ubyte? JoinPercentage = 0            // 0 = will never join; only used in Amberstar
+    ubyte? CombatGraphicIndex = 0        // monsters only
+    ubyte? SpellChancePercentage = 0     // monsters only (unused in Ambermoon)
+    ubyte? MagicBonusToHit = 0          // monsters only (unused in Ambermoon)
+    ubyte? MonsterMorale = 0            // retreat chance; 100 = never flee
+    ubyte? SpellImmunity = 0
     ubyte AttacksPerRound
-    BattleFlags BattleFlags
-    Elements ElementsAndImmunities
+    BattleFlags? BattleFlags = 0
+    Elements? ElementsAndImmunities = 0
     [0x0014]
-    uword SpellLearningPoints
-    uword TrainingPoints
+    uword? SpellLearningPoints = 0
+    uword? TrainingPoints = 0
     [0x0018]
-    uword Gold
-    uword Food
-    uword CharacterBitIndex       // 0xFFFF = not used; 0x0000 on Gryban is a bug
-    Conditions Conditions
-    uword MonsterExperience       // XP rewarded when this monster is defeated
-    uword BattleRoundSpellPointUsage
-    uword MarkOfReturnX
-    uword MarkOfReturnY
-    uword MarkOfReturnMapIndex
+    uword? Gold = 0
+    uword? Food = 0
+    uword? CharacterBitIndex = 0xFFFF   // 0xFFFF = not used
+    Conditions? Conditions = 0
+    uword? MonsterExperience = 0        // XP rewarded when this monster is defeated
+    uword? BattleRoundSpellPointUsage = 0
+    uword? MarkOfReturnX = 0
+    uword? MarkOfReturnY = 0
+    uword? MarkOfReturnMapIndex = 0
     [0x002A]
-    CharacterValue[8] Attributes  // STR, INT, DEX, SPD, STA, CHA, LUK, AntiMagic
+    CharacterValue[8] Attributes        // STR, INT, DEX, SPD, STA, CHA, LUK, AntiMagic
     [0x006A]
     CharacterValue Age
-    CharacterValue SpellDamageBonus  // 10th attribute (Ambermoon Advanced)
+    CharacterValue? SpellDamageBonus    // 10th attribute (Ambermoon Advanced)
     [0x007A]
-    CharacterValue[10] Abilities  // ATT, PAR, SWI, CRI, FindTraps, DisarmTraps, LockPick, Search, ReadMagic, UseMagic
+    CharacterValue[10] Abilities        // ATT, PAR, SWI, CRI, FindTraps, DisarmTraps, LockPick, Search, ReadMagic, UseMagic
     [0x00CA]
     uword CurrentHitPoints
     uword MaxHitPoints
-    uword BonusHitPoints
+    uword? BonusHitPoints = 0
     uword CurrentSpellPoints
     uword MaxSpellPoints
-    uword BonusSpellPoints
-    sword BaseDefense             // monsters only
-    sword BonusDefense            // from equipment
-    sword BaseAttackDamage        // monsters only
-    sword BonusAttackDamage       // from equipment
-    uword MagicAttackLevel
-    uword MagicDefenseLevel
-    uword APRIncreaseLevels       // APR = max(1, Level / APRIncreaseLevels)
+    uword? BonusSpellPoints = 0
+    sword? BaseDefense = 0              // monsters only
+    sword? BonusDefense = 0            // from equipment
+    sword? BaseAttackDamage = 0        // monsters only
+    sword? BonusAttackDamage = 0       // from equipment
+    uword? MagicAttackLevel = 0
+    uword? MagicDefenseLevel = 0
+    uword? APRIncreaseLevels = 0
     uword HitPointsPerLevel
-    uword SpellPointsPerLevel
-    uword SpellLearningPointsPerLevel
-    uword TrainingPointsPerLevel
-    uword LookTextIndex           // 0xFFFF = none
+    uword? SpellPointsPerLevel = 0
+    uword? SpellLearningPointsPerLevel = 0
+    uword? TrainingPointsPerLevel = 0
+    uword? LookTextIndex = 0xFFFF       // 0xFFFF = none
     [0x00EE]
-    udword Experience
-    udword LearnedHealingSpells
-    udword LearnedAlchemisticSpells
-    udword LearnedMysticSpells
-    udword LearnedDestructionSpells
-    udword[3] LearnedFunctionalSpells
-    udword Weight
+    udword? Experience = 0
+    udword? LearnedHealingSpells = 0
+    udword? LearnedAlchemisticSpells = 0
+    udword? LearnedMysticSpells = 0
+    udword? LearnedDestructionSpells = 0
+    udword?[3] LearnedFunctionalSpells = 0
+    udword? Weight = 0
     [0x0112]
-    ubyte[16] Name               // DOS Latin-1 (codepage 850), null-terminated
+    ubyte[16] Name                      // DOS Latin-1 (codepage 850), null-terminated
 }
 
 // ---------------------------------------------------------------
@@ -198,20 +198,20 @@ struct AnimationInfo {
     ubyte[32] FrameIndices
 }
 
-struct Monster : Character {
+struct Monster : Character [Size = 0x032A] {
     Type = CharacterType.Monster
     [0x000B]
-    new AdvancedMonsterFlags MonsterFlags  // replaces JoinPercentage in Character
+    new AdvancedMonsterFlags? MonsterFlags = 0  // replaces JoinPercentage in Character
     [0x01E8]
     AnimationInfo[8] Animations  // Move, ShortAttack, LongAttack, Cast, Hurt, Die, StartAnim, Unknown
     ubyte[8] FrameCounts
     ubyte[16] AtariPalette
     ubyte[32] AmigaPalette
-    ubyte AnimationDirectionFlags  // bit N set = animation N plays backwards after finishing
-    ubyte Padding
+    ubyte? AnimationDirectionFlags = 0  // bit N set = animation N plays backwards after finishing
+    ubyte? Padding = 0
     [0x0322]
-    uword FrameWidth
-    uword FrameHeight
-    uword MappedFrameWidth
-    uword MappedFrameHeight
+    uword? FrameWidth = 0
+    uword? FrameHeight = 0
+    uword? MappedFrameWidth = 0
+    uword? MappedFrameHeight = 0
 }

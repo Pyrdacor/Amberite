@@ -51,13 +51,15 @@ internal sealed class AodBuildVisitor : AodBaseVisitor<object?>
     {
         var name = context.name.Text;
         var baseType = context.@base?.Text;
+        int? declaredSize = context.sizeDirective() is { } sd ? ParseInt(sd.size) : null;
+
         var members = context.structMember()
             .Select(m => (StructMember?)Visit(m))
             .Where(m => m != null)
             .Select(m => m!)
             .ToList();
 
-        _definitions.Add(new StructDef(name, baseType, members));
+        _definitions.Add(new StructDef(name, baseType, declaredSize, members));
         return null;
     }
 
@@ -76,9 +78,33 @@ internal sealed class AodBuildVisitor : AodBaseVisitor<object?>
     public override object? VisitFieldDecl([NotNull] AodParser.FieldDeclContext context)
     {
         var isOverride = context.isOverride != null;
-        var typeRef = (TypeRef)Visit(context.type_)!;
-        var fieldName = context.fieldName.Text;
-        return new FieldDecl(typeRef, fieldName, isOverride);
+        var typeRef    = (TypeRef)Visit(context.type_)!;
+        var fieldName  = context.fieldName.Text;
+
+        // '?' lives inside the typeRef alternative (before the optional array size)
+        bool isOptional = context.type_ switch
+        {
+            AodParser.PrimitiveTypeRefContext p => p.QUESTION() != null,
+            AodParser.NamedTypeRefContext n      => n.QUESTION() != null,
+            _                                   => false,
+        };
+
+        AodDefaultValue? defaultValue = null;
+        if (context.defaultValue != null)
+            defaultValue = (AodDefaultValue)Visit(context.defaultValue)!;
+
+        return new FieldDecl(typeRef, fieldName, isOverride, isOptional, defaultValue);
+    }
+
+    public override object? VisitAodIntDefault([NotNull] AodParser.AodIntDefaultContext context)
+    {
+        return new AodIntDefault(ParseInt(context.intLiteral()));
+    }
+
+    public override object? VisitAodRefDefault([NotNull] AodParser.AodRefDefaultContext context)
+    {
+        var name = string.Join(".", context.qualifiedIdent().IDENT().Select(t => t.GetText()));
+        return new AodRefDefault(name);
     }
 
     public override object? VisitPrimitiveTypeRef([NotNull] AodParser.PrimitiveTypeRefContext context)

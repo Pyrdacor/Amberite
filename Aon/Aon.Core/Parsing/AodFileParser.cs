@@ -20,7 +20,7 @@ public static class AodFileParser
     public static AodParseResult Parse(string text)
     {
         var errorListener = new AodErrorListener();
-        var inputStream = new AntlrInputStream(text);
+        var inputStream   = new AntlrInputStream(text);
 
         var lexer = new AodLexer(inputStream);
         lexer.RemoveErrorListeners();
@@ -43,9 +43,49 @@ public static class AodFileParser
         visitor.Visit(tree);
 
         var file = new AodFile(visitor.Definitions);
+
+        ValidateStructSizes(file, diagnostics);
+
         return new AodParseResult(file, diagnostics);
     }
 
     public static AodParseResult ParseFile(string path) =>
         Parse(System.IO.File.ReadAllText(path));
+
+    // ── post-parse semantic checks ────────────────────────────────────────────
+
+    private static void ValidateStructSizes(AodFile file, List<ParseDiagnostic> diagnostics)
+    {
+        foreach (var def in file.Definitions.OfType<StructDef>())
+        {
+            if (!def.DeclaredSizeInBytes.HasValue) continue;
+
+            try
+            {
+                int actual = ActualStructDataSize(def, file);
+                if (actual > def.DeclaredSizeInBytes.Value)
+                {
+                    diagnostics.Add(new ParseDiagnostic(
+                        DiagnosticSeverity.Error,
+                        $"Struct '{def.Name}': declared [Size = {def.DeclaredSizeInBytes.Value}] " +
+                        $"is smaller than the {actual} bytes required by its fields",
+                        0, 0));
+                }
+            }
+            catch (Exception ex)
+            {
+                diagnostics.Add(new ParseDiagnostic(
+                    DiagnosticSeverity.Error,
+                    $"Struct '{def.Name}': size validation failed — {ex.Message}",
+                    0, 0));
+            }
+        }
+    }
+
+    private static int ActualStructDataSize(StructDef structDef, AodFile file)
+    {
+        var flat = StructFlattener.Flatten(structDef, file);
+        if (flat.Count == 0) return 0;
+        return flat.Max(f => f.Offset + SizeCalculator.TypeSize(f.Type, file));
+    }
 }

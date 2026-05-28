@@ -1,6 +1,6 @@
 ﻿// Source: 017
 
-[Character] S'EBI = {
+[Character] S_EBI = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
     Race                         = Race.Monster

@@ -40,16 +40,21 @@ bitfieldMember
     : name=IDENT
     ;
 
-// struct Character { ... }
+// struct Character [Size = 0x0122] { ... }
 // struct Monster : Character { ... }
 structDef
-    : STRUCT name=IDENT (':' base=IDENT)? '{' structMember* '}'
+    : STRUCT name=IDENT (':' base=IDENT)? sizeDirective? '{' structMember* '}'
+    ;
+
+// [Size = 0x0122]
+sizeDirective
+    : '[' SIZE '=' size=intLiteral ']'
     ;
 
 structMember
     : offsetDirective           // [0x000B]
     | fieldFixup                // Type = CharacterType.Monster
-    | fieldDecl                 // [new] TypeName[N] FieldName
+    | fieldDecl                 // [new] TypeName[N] FieldName[?] [= default]
     ;
 
 // [0x000B]
@@ -63,15 +68,24 @@ fieldFixup
     ;
 
 // ubyte Level
+// ubyte? LookTextIndex = 0xFFFF
 // CharacterValue[8] Attributes
 // new AdvancedMonsterFlags MonsterFlags
 fieldDecl
-    : isOverride=NEW? type_=typeRef fieldName=IDENT
+    : isOverride=NEW? type_=typeRef fieldName=IDENT ('=' defaultValue=aodDefaultValue)?
     ;
 
+// The optional marker '?' sits between the base type and the array size so that
+// both "uword?" and "uword?[3]" are valid (mirrors C# nullable annotation style).
 typeRef
-    : primitiveType ('[' size=intLiteral ']')?   # primitiveTypeRef
-    | typeName=IDENT ('[' size=intLiteral ']')?  # namedTypeRef
+    : primitiveType QUESTION? ('[' size=intLiteral ']')?   # primitiveTypeRef
+    | typeName=IDENT QUESTION? ('[' size=intLiteral ']')?  # namedTypeRef
+    ;
+
+// Default value for an optional field
+aodDefaultValue
+    : intLiteral      # aodIntDefault
+    | qualifiedIdent  # aodRefDefault
     ;
 
 // A.B or just A
@@ -98,12 +112,15 @@ ENUM     : 'enum' ;
 BITFIELD : 'bitfield' ;
 STRUCT   : 'struct' ;
 NEW      : 'new' ;
+SIZE     : 'Size' ;
 UBYTE    : 'ubyte' ;
 SBYTE    : 'sbyte' ;
 UWORD    : 'uword' ;
 SWORD    : 'sword' ;
 UDWORD   : 'udword' ;
 SDWORD   : 'sdword' ;
+
+QUESTION : '?' ;
 
 IDENT   : [a-zA-Z_][a-zA-Z0-9_]* ;
 INT     : [0-9]+ ;
