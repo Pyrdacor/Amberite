@@ -3,13 +3,13 @@
 [Character] SELENA = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Female
-    Race                         = Race.Halfling
+    Race                         = Race.Sylph
     Class                        = Class.Thief
     UsableSpellTypes             = 0
     Level                        = 3
     NumOccupiedHands             = 2
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Monster
+    SpokenLanguages              = Languages.Sylphic
     InventoryInaccessible        = 0
     PortraitIndex                = 80
     JoinPercentage               = 0

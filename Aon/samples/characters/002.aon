@@ -3,13 +3,13 @@
 [Character] NETSRAK = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = 8
+    Race                         = Race.Thalionic
     Class                        = Class.Mage
     UsableSpellTypes             = SpellTypes.Destruction
     Level                        = 50
     NumOccupiedHands             = 1
     NumOccupiedFingers           = 1
-    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf | Languages.Monster | 0xE0
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish | Languages.Sylphic | Languages.Felinic | Languages.Morag | Languages.Animal
     InventoryInaccessible        = 0
     PortraitIndex                = 10
     JoinPercentage               = 0

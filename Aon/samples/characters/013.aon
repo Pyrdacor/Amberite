@@ -3,13 +3,13 @@
 [Character] TARGOR = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = Race.Dwarf
+    Race                         = Race.Gnome
     Class                        = Class.Mystic
-    UsableSpellTypes             = SpellTypes.Mystic | 0x80
+    UsableSpellTypes             = SpellTypes.Mystic | SpellTypes.MasteredSpells
     Level                        = 16
     NumOccupiedHands             = 1
     NumOccupiedFingers           = 2
-    SpokenLanguages              = Languages.Human | Languages.Gnome | Languages.Elf
+    SpokenLanguages              = Languages.Human | Languages.Dwarfish | Languages.Gnomish
     InventoryInaccessible        = 0
     PortraitIndex                = 57
     JoinPercentage               = 0

@@ -5,11 +5,11 @@
     Gender                       = Gender.Female
     Race                         = Race.Elf
     Class                        = Class.Alchemist
-    UsableSpellTypes             = SpellTypes.Alchemistic | 0x80
+    UsableSpellTypes             = SpellTypes.Alchemistic | SpellTypes.MasteredSpells
     Level                        = 25
     NumOccupiedHands             = 1
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Human | Languages.Dwarf
+    SpokenLanguages              = Languages.Human | Languages.Elfish
     InventoryInaccessible        = 0
     PortraitIndex                = 76
     JoinPercentage               = 0

@@ -15,80 +15,94 @@ enum Gender : ubyte {
 }
 
 enum Race : ubyte {
-    Human,
-    Elf,
-    HalfElf,
-    Dwarf,
-    Gnome,
-    Halfling,
-    Animal,
-    Monster
+    Human,           // 0
+    Elf,             // 1
+    Dwarf,           // 2
+    Gnome,           // 3
+    HalfElf,         // 4
+    Sylph,           // 5
+    Feline,          // 6
+    Moranian,        // 7
+    Thalionic,       // 8
+    Animal = 13,     // only Necros the cat NPC
+    Monster = 14     // all non-human monsters
 }
 
 enum Class : ubyte {
-    Adventurer,
-    Warrior,
-    Paladin,
-    Thief,
-    Ranger,
-    Healer,
-    Alchemist,
-    Mystic,
-    Mage,
-    Animal
+    Adventurer,      // 0
+    Warrior,         // 1
+    Paladin,         // 2
+    Thief,           // 3
+    Ranger,          // 4
+    Healer,          // 5
+    Alchemist,       // 6
+    Mystic,          // 7
+    Mage,            // 8
+    Animal,          // 9 - only Necros the cat NPC
+    Monster          // 10 - monsters who aren't mages, thieves, etc.
 }
 
 bitfield SpellTypes : ubyte {
-    Healing,       // 0x01
-    Alchemistic,   // 0x02
-    Mystic,        // 0x04
-    Destruction,   // 0x08
-    Unused1,       // 0x10
-    Unused2,       // 0x20
-    Functional     // 0x40
+    Healing,                    // 0x01 - white spells
+    Alchemistic,                // 0x02 - blue spells
+    Mystic,                     // 0x04 - green spells
+    Destruction,                // 0x08 - black spells
+    IncreasedEarthSpellDamage,  // 0x10 - Ambermoon Advanced only
+    IncreasedWindSpellDamage,   // 0x20 - Ambermoon Advanced only
+    IncreasedFireSpellDamage,   // 0x40 - Ambermoon Advanced only
+    MasteredSpells              // 0x80 - class has mastered these spells
 }
 
 bitfield Languages : ubyte {
-    Human,         // 0x01
-    Dwarf,         // 0x02
-    Gnome,         // 0x04
-    Elf,           // 0x08
-    Monster        // 0x10
+    Human,      // 0x01
+    Elfish,     // 0x02
+    Dwarfish,   // 0x04
+    Gnomish,    // 0x08
+    Sylphic,    // 0x10
+    Felinic,    // 0x20
+    Morag,      // 0x40
+    Animal      // 0x80
 }
 
 bitfield BattleFlags : ubyte {
-    Monster,           // 0x01
-    Boss,              // 0x02
-    DontMove,          // 0x04
-    Undead,            // 0x08
-    Demon,             // 0x10
-    DropNoPseudoItem   // 0x20
+    Undead,                     // 0x01 - can be killed by holy spells
+    Demon,                      // 0x02
+    Boss,                       // 0x04 - immune to fear, paralyze, petrify, etc.
+    Animal,                     // 0x08
+    IncreasedEarthSpellDamage,  // 0x10 - Ambermoon Advanced only
+    IncreasedWindSpellDamage,   // 0x20 - Ambermoon Advanced only
+    IncreasedFireSpellDamage,   // 0x40 - Ambermoon Advanced only
+    Unused                      // 0x80
 }
 
 bitfield Elements : ubyte {
-    Earth,    // 0x01
-    Wind,     // 0x02
-    Fire,     // 0x04
-    Water,    // 0x08
-    Undead,   // 0x10
-    Ghost     // 0x20
+    Unknown,    // 0x01 - unknown effect
+    Psychic,    // 0x02 - immune to MonsterKnowledge, Fear, Sleep, Irritation, Madness
+    Ghost,      // 0x04 - immune to DissolveVictim, Blindness, GhostWeapon, MagicProjectile
+    Undead,     // 0x08 - immune to LP-Stealer
+    Earth,      // 0x10 - immune to Poison, Paralyze, Disease, LP-Stealer
+    Wind,       // 0x20
+    Fire,       // 0x40
+    Water       // 0x80
 }
 
 bitfield Conditions : uword {
-    Irritated,     // 0x0001
-    Crazy,         // 0x0002
-    Sleep,         // 0x0004
-    Panic,         // 0x0008
-    Blind,         // 0x0010
-    Drugged,       // 0x0020
-    Exhausted,     // 0x0040
-    Unused,        // 0x0080
-    Petrified,     // 0x0100
-    Diseased,      // 0x0200
-    Aging,         // 0x0400
-    DeadCorpse,    // 0x0800
-    DeadAshes,     // 0x1000
-    DeadDust       // 0x2000
+    Irritated,      // 0x0001 - can't cast spells (battle-only)
+    Crazy,          // 0x0002 - random battle actions, no inventory access
+    Sleep,          // 0x0004 - no orders; ends on damage (battle-only)
+    Panic,          // 0x0008 - flees automatically (battle-only)
+    Blind,          // 0x0010 - black map view, reduced hit chance
+    Drugged,        // 0x0020 - stoned; fancy colors
+    Exhausted,      // 0x0040 - all values halved, damaged each hour
+    Fleeing,        // 0x0080 - about to flee
+    Paralyzed,      // 0x0100 - can't move or attack
+    Poisoned,       // 0x0200 - damage each battle round or ingame hour
+    Petrified,      // 0x0400 - total immunity, can't act or be damaged
+    Diseased,       // 0x0800 - random attribute decreases each day
+    Aging,          // 0x1000 - age increases each day
+    DeadCorpse,     // 0x2000
+    DeadAshes,      // 0x4000 - needs transformation before revival
+    DeadDust        // 0x8000 - needs transformation before revival
 }
 
 // Ambermoon Advanced only — stored at offset 0x000B for monsters

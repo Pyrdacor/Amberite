@@ -5,11 +5,11 @@
     Gender                       = Gender.Male
     Race                         = Race.Elf
     Class                        = Class.Mystic
-    UsableSpellTypes             = SpellTypes.Mystic | 0x80
+    UsableSpellTypes             = SpellTypes.Mystic | SpellTypes.MasteredSpells
     Level                        = 50
     NumOccupiedHands             = 1
     NumOccupiedFingers           = 2
-    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf | Languages.Monster | 0xE0
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish | Languages.Sylphic | Languages.Felinic | Languages.Morag | Languages.Animal
     InventoryInaccessible        = 0
     PortraitIndex                = 61
     JoinPercentage               = 0

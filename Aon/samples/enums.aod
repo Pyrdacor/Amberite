@@ -1,0 +1,161 @@
+// Common Ambermoon enumerations
+// Source: Ambermoon FileSpecs/Enumerations/
+
+// ---------------------------------------------------------------
+// Ammunition
+// ---------------------------------------------------------------
+
+enum AmmunitionType : ubyte {
+    None,           // 0
+    Slingstones,    // 1
+    Arrows,         // 2
+    Bolts,          // 3
+    Slingdaggers    // 4
+}
+
+// ---------------------------------------------------------------
+// Items
+// ---------------------------------------------------------------
+
+enum ItemType : ubyte {
+    None,           // 0
+    Armor,          // 1
+    Headgear,       // 2
+    Footgear,       // 3
+    Shield,         // 4
+    CloseRangedWeapon,  // 5
+    LongRangedWeapon,   // 6
+    Ammunition,     // 7
+    TextScroll,     // 8
+    SpellScroll,    // 9
+    Potion,         // 10
+    Amulet,         // 11
+    Brooch,         // 12
+    Ring,           // 13
+    Gem,            // 14
+    Tool,           // 15
+    Key,            // 16
+    NormalItem,     // 17
+    MagicalItem,    // 18
+    SpecialItem,    // 19
+    Transportation, // 20
+    Ailment         // 21
+}
+
+enum EquipmentSlot : ubyte {
+    None,           // 0
+    Neck,           // 1 - chain/amulet
+    Head,           // 2 - headgear
+    Chest,          // 3 - brooch
+    RightHand,      // 4 - weapon
+    Body,           // 5 - armor
+    LeftHand,       // 6 - shield, ammunition, etc.
+    RightFinger,    // 7 - ring
+    Feet,           // 8 - footgear
+    LeftFinger      // 9 - ring
+}
+
+// Bitfield: which classes can use/wear an item (16-bit big-endian)
+bitfield ClassUsability : uword {
+    Adventurer,     // 0x0001
+    Warrior,        // 0x0002
+    Paladin,        // 0x0004
+    Thief,          // 0x0008
+    Ranger,         // 0x0010
+    Healer,         // 0x0020
+    Alchemist,      // 0x0040
+    Mystic,         // 0x0080
+    Mage,           // 0x0100
+    Animal,         // 0x0200
+    Monster         // 0x0400
+}
+
+// Bitfield: which genders can use/wear an item
+bitfield GenderUsability : ubyte {
+    Male,           // 0x01
+    Female          // 0x02
+}
+
+enum SpecialItemPurpose : ubyte {
+    Compass,        // 0 - see orientation
+    MonsterEye,     // 1 - see nearby enemies
+    MagicPicture,   // 2 - see day and night
+    WindChain,      // 3 - able to use wind gates
+    MapLocator,     // 4 - see map coordinates
+    Clock           // 5 - see time
+}
+
+// Bits for special items active in savegame
+bitfield SpecialItemFlags : ubyte {
+    Compass,        // 0x01
+    MonsterEye,     // 0x02
+    MagicPicture,   // 0x04
+    WindChain,      // 0x08
+    MapLocator,     // 0x10
+    Clock           // 0x20
+}
+
+// ---------------------------------------------------------------
+// Map / world
+// ---------------------------------------------------------------
+
+enum AutomapType : uword {
+    None,           // 0  - empty blocks
+    Wall,           // 1  - used by walls
+    Riddlemouth,    // 2
+    Teleporter,     // 3
+    Spinner,        // 4
+    Trap,           // 5  - skull symbol
+    Trapdoor,       // 6  - holes etc.
+    Special,        // 7  - exclamation mark
+    Monster,        // 8  - red sphere
+    Door,           // 9  - closed
+    DoorOpen,       // 10
+    Merchant,       // 11
+    Tavern,         // 12
+    Chest,          // 13
+    Exit,           // 14 - X symbol
+    ChestOpen,      // 15
+    Pile,           // 16
+    Person,         // 17 - green sphere
+    GotoPoint       // 18 - white blinking return point
+}
+
+enum Direction : ubyte {
+    Up,             // 0
+    Right,          // 1
+    Down,           // 2
+    Left,           // 3
+    RandomOrKeep    // 4 - spinners: random; map changes: keep current
+}
+
+enum TravelType : ubyte {
+    Walk,           // 0
+    Horse,          // 1
+    Raft,           // 2
+    Ship,           // 3
+    MagicalDisc,    // 4
+    Eagle,          // 5
+    Flying,         // 6 - cheat mode in original Ambermoon
+    Swim,           // 7
+    WitchsBroom,    // 8
+    SandLizard,     // 9
+    SandShip,       // 10
+    Wasp            // 11 - Ambermoon Advanced only
+}
+
+// Bitfield: which travel types are allowed on a tile (12-bit, used in tile flags)
+bitfield TravelTypeFlags : uword {
+    Walk,           // 0x0001
+    Horse,          // 0x0002
+    Raft,           // 0x0004
+    Ship,           // 0x0008
+    MagicalDisc,    // 0x0010
+    Eagle,          // 0x0020
+    Flying,         // 0x0040
+    Swim,           // 0x0080
+    WitchsBroom,    // 0x0100
+    SandLizard,     // 0x0200
+    SandShip,       // 0x0400
+    Wasp            // 0x0800 - Ambermoon Advanced only
+}

@@ -5,11 +5,11 @@
     Gender                       = Gender.Female
     Race                         = Race.Human
     Class                        = Class.Healer
-    UsableSpellTypes             = SpellTypes.Healing | 0x80
+    UsableSpellTypes             = SpellTypes.Healing | SpellTypes.MasteredSpells
     Level                        = 6
     NumOccupiedHands             = 2
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Human | Languages.Dwarf
+    SpokenLanguages              = Languages.Human | Languages.Elfish
     InventoryInaccessible        = 0
     PortraitIndex                = 46
     JoinPercentage               = 0

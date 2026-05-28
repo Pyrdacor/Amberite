@@ -3,13 +3,13 @@
 [Character] NELVIN = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = Race.Gnome
+    Race                         = Race.HalfElf
     Class                        = Class.Mage
     UsableSpellTypes             = SpellTypes.Destruction
     Level                        = 4
     NumOccupiedHands             = 1
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish
     InventoryInaccessible        = 0
     PortraitIndex                = 19
     JoinPercentage               = 0

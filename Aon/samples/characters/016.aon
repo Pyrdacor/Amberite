@@ -3,13 +3,13 @@
 [Character] KASIMIR = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = 13
+    Race                         = Race.Animal
     Class                        = Class.Animal
     UsableSpellTypes             = 0
     Level                        = 1
     NumOccupiedHands             = 2
     NumOccupiedFingers           = 2
-    SpokenLanguages              = 0x80
+    SpokenLanguages              = Languages.Animal
     InventoryInaccessible        = 0
     PortraitIndex                = 81
     JoinPercentage               = 0
@@ -19,7 +19,7 @@
     MonsterMorale                = 0
     SpellImmunity                = 0
     AttacksPerRound              = 3
-    BattleFlags                  = BattleFlags.Undead | BattleFlags.Demon | BattleFlags.DropNoPseudoItem | 0x40
+    BattleFlags                  = BattleFlags.Animal | BattleFlags.IncreasedEarthSpellDamage | BattleFlags.IncreasedWindSpellDamage | BattleFlags.IncreasedFireSpellDamage
     ElementsAndImmunities        = 0
     SpellLearningPoints          = 0
     TrainingPoints               = 5

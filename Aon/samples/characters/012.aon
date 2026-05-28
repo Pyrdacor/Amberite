@@ -3,13 +3,13 @@
 [Character] VALDYN = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = Race.Animal
+    Race                         = Race.Feline
     Class                        = Class.Ranger
     UsableSpellTypes             = SpellTypes.Mystic
     Level                        = 8
     NumOccupiedHands             = 2
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Human | 0x20
+    SpokenLanguages              = Languages.Human | Languages.Felinic
     InventoryInaccessible        = 0
     PortraitIndex                = 84
     JoinPercentage               = 0

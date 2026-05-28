@@ -3,13 +3,13 @@
 [Character] ERIK = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = Race.HalfElf
+    Race                         = Race.Dwarf
     Class                        = Class.Warrior
     UsableSpellTypes             = 0
     Level                        = 50
     NumOccupiedHands             = 2
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf | Languages.Monster | 0xE0
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish | Languages.Sylphic | Languages.Felinic | Languages.Morag | Languages.Animal
     InventoryInaccessible        = 0
     PortraitIndex                = 60
     JoinPercentage               = 0

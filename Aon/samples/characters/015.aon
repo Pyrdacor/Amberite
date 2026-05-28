@@ -3,13 +3,13 @@
 [Character] GRYBAN = {
     Type                         = CharacterType.PartyMember
     Gender                       = Gender.Male
-    Race                         = Race.Gnome
+    Race                         = Race.HalfElf
     Class                        = Class.Paladin
     UsableSpellTypes             = SpellTypes.Healing
     Level                        = 35
     NumOccupiedHands             = 2
     NumOccupiedFingers           = 0
-    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf
+    SpokenLanguages              = Languages.Human | Languages.Elfish | Languages.Dwarfish | Languages.Gnomish
     InventoryInaccessible        = 0
     PortraitIndex                = 15
     JoinPercentage               = 0

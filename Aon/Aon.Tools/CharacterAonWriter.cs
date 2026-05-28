@@ -8,38 +8,48 @@ internal static class CharacterAonWriter
 
     private static readonly string[] CharacterTypes = ["CharacterType.PartyMember", "CharacterType.NPC", "CharacterType.Monster"];
     private static readonly string[] Genders        = ["Gender.Male", "Gender.Female", "Gender.None"];
-    private static readonly string[] Races          = ["Race.Human", "Race.Elf", "Race.HalfElf", "Race.Dwarf", "Race.Gnome", "Race.Halfling", "Race.Animal", "Race.Monster"];
-    private static readonly string[] Classes        = ["Class.Adventurer", "Class.Warrior", "Class.Paladin", "Class.Thief", "Class.Ranger", "Class.Healer", "Class.Alchemist", "Class.Mystic", "Class.Mage", "Class.Animal"];
+    private static readonly string[] Classes        = ["Class.Adventurer", "Class.Warrior", "Class.Paladin", "Class.Thief", "Class.Ranger", "Class.Healer", "Class.Alchemist", "Class.Mystic", "Class.Mage", "Class.Animal", "Class.Monster"];
+
+    private static readonly Dictionary<int, string> RaceNames = new()
+    {
+        [0]  = "Race.Human",    [1]  = "Race.Elf",       [2]  = "Race.Dwarf",
+        [3]  = "Race.Gnome",    [4]  = "Race.HalfElf",   [5]  = "Race.Sylph",
+        [6]  = "Race.Feline",   [7]  = "Race.Moranian",  [8]  = "Race.Thalionic",
+        [13] = "Race.Animal",   [14] = "Race.Monster",
+    };
 
     // ── bitfield tables ──────────────────────────────────────────────────────
 
     private static readonly (int Bit, string Name)[] SpellTypeFlags =
     [
-        (0x01, "SpellTypes.Healing"), (0x02, "SpellTypes.Alchemistic"),
-        (0x04, "SpellTypes.Mystic"),  (0x08, "SpellTypes.Destruction"),
-        (0x10, "SpellTypes.Unused1"), (0x20, "SpellTypes.Unused2"),
-        (0x40, "SpellTypes.Functional"),
+        (0x01, "SpellTypes.Healing"),                   (0x02, "SpellTypes.Alchemistic"),
+        (0x04, "SpellTypes.Mystic"),                    (0x08, "SpellTypes.Destruction"),
+        (0x10, "SpellTypes.IncreasedEarthSpellDamage"), (0x20, "SpellTypes.IncreasedWindSpellDamage"),
+        (0x40, "SpellTypes.IncreasedFireSpellDamage"),  (0x80, "SpellTypes.MasteredSpells"),
     ];
 
     private static readonly (int Bit, string Name)[] LanguageFlags =
     [
-        (0x01, "Languages.Human"), (0x02, "Languages.Dwarf"),
-        (0x04, "Languages.Gnome"), (0x08, "Languages.Elf"),
-        (0x10, "Languages.Monster"),
+        (0x01, "Languages.Human"),   (0x02, "Languages.Elfish"),
+        (0x04, "Languages.Dwarfish"),(0x08, "Languages.Gnomish"),
+        (0x10, "Languages.Sylphic"), (0x20, "Languages.Felinic"),
+        (0x40, "Languages.Morag"),   (0x80, "Languages.Animal"),
     ];
 
     private static readonly (int Bit, string Name)[] BattleFlagFlags =
     [
-        (0x01, "BattleFlags.Monster"),    (0x02, "BattleFlags.Boss"),
-        (0x04, "BattleFlags.DontMove"),   (0x08, "BattleFlags.Undead"),
-        (0x10, "BattleFlags.Demon"),      (0x20, "BattleFlags.DropNoPseudoItem"),
+        (0x01, "BattleFlags.Undead"),                    (0x02, "BattleFlags.Demon"),
+        (0x04, "BattleFlags.Boss"),                      (0x08, "BattleFlags.Animal"),
+        (0x10, "BattleFlags.IncreasedEarthSpellDamage"), (0x20, "BattleFlags.IncreasedWindSpellDamage"),
+        (0x40, "BattleFlags.IncreasedFireSpellDamage"),  (0x80, "BattleFlags.Unused"),
     ];
 
     private static readonly (int Bit, string Name)[] ElementFlags =
     [
-        (0x01, "Elements.Earth"), (0x02, "Elements.Wind"),
-        (0x04, "Elements.Fire"),  (0x08, "Elements.Water"),
-        (0x10, "Elements.Undead"),(0x20, "Elements.Ghost"),
+        (0x01, "Elements.Unknown"), (0x02, "Elements.Psychic"),
+        (0x04, "Elements.Ghost"),   (0x08, "Elements.Undead"),
+        (0x10, "Elements.Earth"),   (0x20, "Elements.Wind"),
+        (0x40, "Elements.Fire"),    (0x80, "Elements.Water"),
     ];
 
     private static readonly (int Bit, string Name)[] ConditionFlags =
@@ -47,10 +57,11 @@ internal static class CharacterAonWriter
         (0x0001, "Conditions.Irritated"), (0x0002, "Conditions.Crazy"),
         (0x0004, "Conditions.Sleep"),     (0x0008, "Conditions.Panic"),
         (0x0010, "Conditions.Blind"),     (0x0020, "Conditions.Drugged"),
-        (0x0040, "Conditions.Exhausted"), (0x0080, "Conditions.Unused"),
-        (0x0100, "Conditions.Petrified"), (0x0200, "Conditions.Diseased"),
-        (0x0400, "Conditions.Aging"),     (0x0800, "Conditions.DeadCorpse"),
-        (0x1000, "Conditions.DeadAshes"), (0x2000, "Conditions.DeadDust"),
+        (0x0040, "Conditions.Exhausted"), (0x0080, "Conditions.Fleeing"),
+        (0x0100, "Conditions.Paralyzed"), (0x0200, "Conditions.Poisoned"),
+        (0x0400, "Conditions.Petrified"), (0x0800, "Conditions.Diseased"),
+        (0x1000, "Conditions.Aging"),     (0x2000, "Conditions.DeadCorpse"),
+        (0x4000, "Conditions.DeadAshes"), (0x8000, "Conditions.DeadDust"),
     ];
 
     private static readonly string[] AttributeNames = ["STR", "INT", "DEX", "SPD", "STA", "CHA", "LUK", "A-M"];
@@ -69,7 +80,7 @@ internal static class CharacterAonWriter
 
         Field(sb, "Type",                   Enum(c.CharacterType, CharacterTypes));
         Field(sb, "Gender",                 Enum(c.Gender, Genders));
-        Field(sb, "Race",                   Enum(c.Race, Races));
+        Field(sb, "Race",                   RaceNames.TryGetValue(c.Race, out var rn) ? rn : c.Race.ToString());
         Field(sb, "Class",                  Enum(c.Class, Classes));
         Field(sb, "UsableSpellTypes",       Bitfield(c.UsableSpellTypes, SpellTypeFlags));
         Field(sb, "Level",                  c.Level.ToString());
