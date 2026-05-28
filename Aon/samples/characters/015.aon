@@ -1,0 +1,90 @@
+﻿// Source: 015
+
+[Character] GRYBAN = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = Race.Gnome
+    Class                        = Class.Paladin
+    UsableSpellTypes             = SpellTypes.Healing
+    Level                        = 35
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf
+    InventoryInaccessible        = 0
+    PortraitIndex                = 15
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 3
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 90
+    TrainingPoints               = 245
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0x35A0
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    39, Max =    40, Bonus =     5, Backup =     0 }    // STR
+        { Current =    68, Max =    70, Bonus =     0, Backup =     0 }    // INT
+        { Current =    55, Max =    60, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    51, Max =    60, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    33, Max =    40, Bonus =     0, Backup =     0 }    // STA
+        { Current =    62, Max =    70, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    23, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =    15, Bonus =     5, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    89, Max =   250, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    81, Max =    85, Bonus =     5, Backup =     0 }    // ATT
+        { Current =    59, Max =    65, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    79, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    44, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    49, Max =    50, Bonus =    25, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 495
+    MaxHitPoints                 = 490
+    BonusHitPoints               = 5
+    CurrentSpellPoints           = 215
+    MaxSpellPoints               = 210
+    BonusSpellPoints             = 5
+    BaseDefense                  = 0
+    BonusDefense                 = 38
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 18
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 2
+    APRIncreaseLevels            = 12
+    HitPointsPerLevel            = 14
+    SpellPointsPerLevel          = 6
+    SpellLearningPointsPerLevel  = 7
+    TrainingPointsPerLevel       = 7
+    LookTextIndex                = 0x0000
+
+    Experience                   = 72450
+    LearnedHealingSpells         = 0x0420710A
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 28750
+
+    Name                         = "GRYBAN"
+}

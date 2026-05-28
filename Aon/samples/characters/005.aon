@@ -1,0 +1,90 @@
+﻿// Source: 005
+
+[Character] CHRIS = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = Race.Elf
+    Class                        = Class.Mystic
+    UsableSpellTypes             = SpellTypes.Mystic | 0x80
+    Level                        = 50
+    NumOccupiedHands             = 1
+    NumOccupiedFingers           = 2
+    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf | Languages.Monster | 0xE0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 61
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 4
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 265
+    TrainingPoints               = 500
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    35, Max =    35, Bonus =     5, Backup =     0 }    // STR
+        { Current =    90, Max =    90, Bonus =     0, Backup =     0 }    // INT
+        { Current =    70, Max =    70, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    70, Max =    70, Bonus =    30, Backup =     0 }    // SPD
+        { Current =    35, Max =    35, Bonus =     0, Backup =     0 }    // STA
+        { Current =    90, Max =    90, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    30, Max =    30, Bonus =    10, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    29, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    25, Max =    25, Bonus =    25, Backup =     0 }    // ATT
+        { Current =    40, Max =    40, Bonus =    30, Backup =     0 }    // PAR
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =    25, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 300
+    MaxHitPoints                 = 300
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 825
+    MaxSpellPoints               = 800
+    BonusSpellPoints             = 25
+    BaseDefense                  = 0
+    BonusDefense                 = 26
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 30
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 6
+    APRIncreaseLevels            = 15
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 114750
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0x0003FFFE
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 1561
+
+    Name                         = "CHRIS"
+}

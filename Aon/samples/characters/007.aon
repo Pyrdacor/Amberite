@@ -1,0 +1,90 @@
+﻿// Source: 007
+
+[Character] TAR DER DUNKLE = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = Race.Human
+    Class                        = Class.Mage
+    UsableSpellTypes             = SpellTypes.Destruction
+    Level                        = 35
+    NumOccupiedHands             = 0
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human
+    InventoryInaccessible        = 0
+    PortraitIndex                = 26
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 4
+    TrainingPoints               = 245
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    45, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    37, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    42, Max =    50, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    38, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    46, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    27, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    40, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    35, Max =    35, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    30, Max =    35, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 210
+    MaxHitPoints                 = 210
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 560
+    MaxSpellPoints               = 560
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 4
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 30
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 7
+    LookTextIndex                = 0x0000
+
+    Experience                   = 59850
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x7FFFDF7E
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 1160
+
+    Name                         = "TAR DER DUNKLE"
+}

@@ -1,0 +1,90 @@
+﻿// Source: 014
+
+[Character] LEONARIA = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Female
+    Race                         = Race.Elf
+    Class                        = Class.Alchemist
+    UsableSpellTypes             = SpellTypes.Alchemistic | 0x80
+    Level                        = 25
+    NumOccupiedHands             = 1
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Dwarf
+    InventoryInaccessible        = 0
+    PortraitIndex                = 76
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 35
+    TrainingPoints               = 175
+    Gold                         = 581
+    Food                         = 16
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    29, Max =    35, Bonus =     0, Backup =     0 }    // STR
+        { Current =    73, Max =    90, Bonus =     0, Backup =     0 }    // INT
+        { Current =    53, Max =    70, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    46, Max =    70, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    31, Max =    35, Bonus =     0, Backup =     0 }    // STA
+        { Current =    83, Max =    90, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    22, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     6, Max =    30, Bonus =     5, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   206, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    25, Max =    25, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    40, Max =    40, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    33, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    75, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    69, Max =    99, Bonus =    15, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 160
+    MaxHitPoints                 = 150
+    BonusHitPoints               = 10
+    CurrentSpellPoints           = 425
+    MaxSpellPoints               = 400
+    BonusSpellPoints             = 25
+    BaseDefense                  = 0
+    BonusDefense                 = 13
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 25
+    MagicAttackLevel             = 1
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 16
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 20
+    TrainingPointsPerLevel       = 7
+    LookTextIndex                = 0x0000
+
+    Experience                   = 28750
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0x1080366A
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 14665
+
+    Name                         = "LEONARIA"
+}

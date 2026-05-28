@@ -1,0 +1,90 @@
+﻿// Source: 013
+
+[Character] TARGOR = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = Race.Dwarf
+    Class                        = Class.Mystic
+    UsableSpellTypes             = SpellTypes.Mystic | 0x80
+    Level                        = 16
+    NumOccupiedHands             = 1
+    NumOccupiedFingers           = 2
+    SpokenLanguages              = Languages.Human | Languages.Gnome | Languages.Elf
+    InventoryInaccessible        = 0
+    PortraitIndex                = 57
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 2
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 25
+    TrainingPoints               = 112
+    Gold                         = 1258
+    Food                         = 0
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    40, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    68, Max =    75, Bonus =     0, Backup =     0 }    // INT
+        { Current =    55, Max =    60, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    56, Max =    60, Bonus =    20, Backup =     0 }    // SPD
+        { Current =    20, Max =    40, Bonus =     0, Backup =     0 }    // STA
+        { Current =    12, Max =    20, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    34, Max =    60, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     4, Max =    10, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =   215, Max =   500, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    24, Max =    25, Bonus =    10, Backup =     0 }    // ATT
+        { Current =    33, Max =    40, Bonus =    25, Backup =     0 }    // PAR
+        { Current =    47, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    69, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    82, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 112
+    MaxHitPoints                 = 112
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 256
+    MaxSpellPoints               = 256
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 12
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 10
+    MagicAttackLevel             = 1
+    MagicDefenseLevel            = 2
+    APRIncreaseLevels            = 16
+    HitPointsPerLevel            = 7
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 7
+    LookTextIndex                = 0x0000
+
+    Experience                   = 11500
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0x00020FD2
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 9525
+
+    Name                         = "TARGOR"
+}

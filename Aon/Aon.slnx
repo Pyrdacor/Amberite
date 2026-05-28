@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Aon.Cli/Aon.Cli.csproj" />
+  <Project Path="Aon.Core/Aon.Core.csproj" />
+  <Project Path="Aon.Tools/Aon.Tools.csproj" />
+</Solution>

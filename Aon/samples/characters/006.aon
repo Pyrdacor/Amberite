@@ -1,0 +1,90 @@
+﻿// Source: 006
+
+[Character] MONIKA = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Female
+    Race                         = Race.Human
+    Class                        = Class.Healer
+    UsableSpellTypes             = SpellTypes.Healing | 0x80
+    Level                        = 50
+    NumOccupiedHands             = 1
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf | Languages.Monster | 0xE0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 47
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 127
+    TrainingPoints               = 500
+    Gold                         = 0
+    Food                         = 5
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // STR
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // INT
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    50, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    24, Max =    80, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    25, Max =    25, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    40, Max =    40, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 300
+    MaxHitPoints                 = 300
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 800
+    MaxSpellPoints               = 800
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 6
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 6
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 114750
+    LearnedHealingSpells         = 0x7FFFFFFE
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 3725
+
+    Name                         = "MONIKA"
+}

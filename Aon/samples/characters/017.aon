@@ -1,0 +1,90 @@
+﻿// Source: 017
+
+[Character] S'EBI = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = Race.Monster
+    Class                        = Class.Thief
+    UsableSpellTypes             = 0
+    Level                        = 45
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = 0x40
+    InventoryInaccessible        = 0
+    PortraitIndex                = 85
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 4
+    BattleFlags                  = BattleFlags.Demon
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 0
+    TrainingPoints               = 50
+    Gold                         = 0
+    Food                         = 0
+    CharacterBitIndex            = 0x3C00
+    Conditions                   = Conditions.DeadCorpse
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    62, Max =    80, Bonus =     0, Backup =     0 }    // STR
+        { Current =    46, Max =    60, Bonus =     0, Backup =     0 }    // INT
+        { Current =    64, Max =    80, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    80, Max =    85, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    40, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    62, Max =    70, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    18, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    23, Max =    50, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    32, Max =   800, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    76, Max =    90, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    47, Max =    50, Bonus =     0, Backup =     0 }    // PAR
+        { Current =     0, Max =    50, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     1, Max =     5, Bonus =     0, Backup =     0 }    // CRI
+        { Current =    25, Max =    60, Bonus =     0, Backup =     0 }    // F-T
+        { Current =    25, Max =    60, Bonus =     0, Backup =     0 }    // D-T
+        { Current =    35, Max =    60, Bonus =     0, Backup =     0 }    // L-P
+        { Current =    62, Max =    80, Bonus =     0, Backup =     0 }    // SRC
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // R-M
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 450
+    MaxHitPoints                 = 450
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 0
+    MaxSpellPoints               = 0
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 0
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 0
+    MagicAttackLevel             = 0
+    MagicDefenseLevel            = 0
+    APRIncreaseLevels            = 10
+    HitPointsPerLevel            = 10
+    SpellPointsPerLevel          = 0
+    SpellLearningPointsPerLevel  = 0
+    TrainingPointsPerLevel       = 12
+    LookTextIndex                = 0x0000
+
+    Experience                   = 100000
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 0
+
+    Name                         = "S'EBI"
+}

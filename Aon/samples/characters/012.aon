@@ -1,0 +1,90 @@
+﻿// Source: 012
+
+[Character] VALDYN = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = Race.Animal
+    Class                        = Class.Ranger
+    UsableSpellTypes             = SpellTypes.Mystic
+    Level                        = 8
+    NumOccupiedHands             = 2
+    NumOccupiedFingers           = 0
+    SpokenLanguages              = Languages.Human | 0x20
+    InventoryInaccessible        = 0
+    PortraitIndex                = 84
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 42
+    TrainingPoints               = 72
+    Gold                         = 487
+    Food                         = 3
+    CharacterBitIndex            = 0x2400
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    65, Max =    70, Bonus =     0, Backup =     0 }    // STR
+        { Current =    24, Max =    40, Bonus =     0, Backup =     0 }    // INT
+        { Current =    79, Max =    80, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    73, Max =    80, Bonus =    25, Backup =     0 }    // SPD
+        { Current =    42, Max =    50, Bonus =     0, Backup =     0 }    // STA
+        { Current =    40, Max =    40, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    26, Max =    50, Bonus =     0, Backup =     0 }    // LUK
+        { Current =     0, Max =     0, Bonus =     5, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    22, Max =    85, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    58, Max =    70, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    42, Max =    60, Bonus =    15, Backup =     0 }    // PAR
+        { Current =    23, Max =    99, Bonus =    15, Backup =     0 }    // SWI
+        { Current =     0, Max =     2, Bonus =     0, Backup =     0 }    // CRI
+        { Current =    15, Max =    85, Bonus =     0, Backup =     0 }    // F-T
+        { Current =    10, Max =    75, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =    15, Max =    99, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    42, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    41, Max =    50, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 96
+    MaxHitPoints                 = 96
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 48
+    MaxSpellPoints               = 48
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 15
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 20
+    MagicAttackLevel             = 3
+    MagicDefenseLevel            = 1
+    APRIncreaseLevels            = 14
+    HitPointsPerLevel            = 12
+    SpellPointsPerLevel          = 4
+    SpellLearningPointsPerLevel  = 7
+    TrainingPointsPerLevel       = 9
+    LookTextIndex                = 0x0000
+
+    Experience                   = 3780
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0x00020000
+    LearnedDestructionSpells     = 0
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 9435
+
+    Name                         = "VALDYN"
+}

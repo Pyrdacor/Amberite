@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Ambermoon.Aon</RootNamespace>
+    <AssemblyName>Ambermoon.Aon.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4BuildTasks" Version="12.8.0" PrivateAssets="all" />
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Antlr4 Include="Grammar\Aod.g4">
+      <Visitor>true</Visitor>
+      <Listener>false</Listener>
+      <Package>Ambermoon.Aon</Package>
+    </Antlr4>
+    <Antlr4 Include="Grammar\Aon.g4">
+      <Visitor>true</Visitor>
+      <Listener>false</Listener>
+      <Package>Ambermoon.Aon</Package>
+    </Antlr4>
+  </ItemGroup>
+
+</Project>

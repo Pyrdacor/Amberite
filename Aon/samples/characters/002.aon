@@ -1,0 +1,90 @@
+﻿// Source: 002
+
+[Character] NETSRAK = {
+    Type                         = CharacterType.PartyMember
+    Gender                       = Gender.Male
+    Race                         = 8
+    Class                        = Class.Mage
+    UsableSpellTypes             = SpellTypes.Destruction
+    Level                        = 50
+    NumOccupiedHands             = 1
+    NumOccupiedFingers           = 1
+    SpokenLanguages              = Languages.Human | Languages.Dwarf | Languages.Gnome | Languages.Elf | Languages.Monster | 0xE0
+    InventoryInaccessible        = 0
+    PortraitIndex                = 10
+    JoinPercentage               = 0
+    CombatGraphicIndex           = 0
+    SpellChancePercentage        = 0
+    MagicBonusToHit              = 0
+    MonsterMorale                = 0
+    SpellImmunity                = 0
+    AttacksPerRound              = 1
+    BattleFlags                  = 0
+    ElementsAndImmunities        = 0
+    SpellLearningPoints          = 139
+    TrainingPoints               = 500
+    Gold                         = 0
+    Food                         = 5
+    CharacterBitIndex            = 0xFFFF
+    Conditions                   = 0
+    MonsterExperience            = 0
+    BattleRoundSpellUsage        = 0
+    MarkOfReturnX                = 0
+    MarkOfReturnY                = 0
+    MarkOfReturnMapIndex         = 0
+
+    Attributes = [
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // STR
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // INT
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // DEX
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // SPD
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // STA
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // CHA
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // LUK
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // A-M
+    ]
+    Age              = { Current =    26, Max =   999, Bonus =     0, Backup =     0 }
+    SpellDamageBonus = { Current =     0, Max =     0, Bonus =     0, Backup =     0 }
+
+    Abilities = [
+        { Current =    35, Max =    35, Bonus =     0, Backup =     0 }    // ATT
+        { Current =    35, Max =    35, Bonus =     0, Backup =     0 }    // PAR
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // SWI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // CRI
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // F-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // D-T
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // L-P
+        { Current =     0, Max =     0, Bonus =     0, Backup =     0 }    // SRC
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // R-M
+        { Current =    99, Max =    99, Bonus =     0, Backup =     0 }    // U-M
+    ]
+
+    CurrentHitPoints             = 300
+    MaxHitPoints                 = 300
+    BonusHitPoints               = 0
+    CurrentSpellPoints           = 800
+    MaxSpellPoints               = 800
+    BonusSpellPoints             = 0
+    BaseDefense                  = 0
+    BonusDefense                 = 7
+    BaseAttackDamage             = 0
+    BonusAttackDamage            = 25
+    MagicAttackLevel             = 1
+    MagicDefenseLevel            = 1
+    APRIncreaseLevels            = 0
+    HitPointsPerLevel            = 6
+    SpellPointsPerLevel          = 16
+    SpellLearningPointsPerLevel  = 10
+    TrainingPointsPerLevel       = 10
+    LookTextIndex                = 0x0000
+
+    Experience                   = 121125
+    LearnedHealingSpells         = 0
+    LearnedAlchemisticSpells     = 0
+    LearnedMysticSpells          = 0
+    LearnedDestructionSpells     = 0x7FFFFFFE
+    LearnedFunctionalSpells = [ 0, 0, 0 ]
+    Weight                       = 4150
+
+    Name                         = "NETSRAK"
+}
