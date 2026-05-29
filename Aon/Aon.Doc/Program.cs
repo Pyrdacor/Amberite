@@ -24,7 +24,7 @@ for (int i = 0; i < args.Length; i++)
             break;
         default:
             if (!args[i].StartsWith('-'))
-                aonPaths.Add(args[i]);
+                aonPaths.AddRange(ExpandGlob(args[i]));
             else
                 Console.Error.WriteLine($"Unknown option: {args[i]}");
             break;
@@ -97,5 +97,18 @@ if (format != OutputFormat.Md)
 return 0;
 
 // ─────────────────────────────────────────────────────────────────────────────
+
+// Expand a path that may contain * or ? wildcards into matching file paths,
+// sorted. Returns a single-element list for plain paths (no wildcards).
+static IEnumerable<string> ExpandGlob(string pattern)
+{
+    if (!pattern.Contains('*') && !pattern.Contains('?'))
+        return [pattern];
+
+    var dir     = Path.GetDirectoryName(pattern);
+    var fileGlob = Path.GetFileName(pattern);
+    var searchIn = string.IsNullOrEmpty(dir) ? "." : dir;
+    return Directory.GetFiles(searchIn, fileGlob).OrderBy(f => f);
+}
 
 enum OutputFormat { Both, Md, Html }
