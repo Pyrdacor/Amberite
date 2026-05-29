@@ -1,6 +1,6 @@
 namespace Ambermoon.Aon;
 
-internal sealed record FlatField(
+public sealed record FlatField(
     int Offset,
     TypeRef Type,
     string Name,

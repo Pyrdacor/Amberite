@@ -1,6 +1,6 @@
 ﻿// Source: 041
 
-[Monster] WACH_DÄMON = {
+[Monster] WACH_D_MON = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

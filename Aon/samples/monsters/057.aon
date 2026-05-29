@@ -1,6 +1,6 @@
 ﻿// Source: 057
 
-[Monster] GIZZEK_KÖNIGIN = {
+[Monster] GIZZEK_K_NIGIN = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Female
     Race                         = Race.Monster

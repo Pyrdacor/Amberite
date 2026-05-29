@@ -1,6 +1,6 @@
 ﻿// Source: 012
 
-[Monster] WÜSTENECHSE = {
+[Monster] W_STENECHSE = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

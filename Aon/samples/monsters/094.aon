@@ -1,6 +1,6 @@
 ﻿// Source: 094
 
-[Monster] WÄCHTERSPINNE = {
+[Monster] W_CHTERSPINNE = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

@@ -1,6 +1,6 @@
 ﻿// Source: 018
 
-[Monster] REG_HÜGELRIESE = {
+[Monster] REG_H_GELRIESE = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

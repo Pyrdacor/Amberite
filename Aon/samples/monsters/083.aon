@@ -1,6 +1,6 @@
 ﻿// Source: 083
 
-[Monster] WESPENKÖNIGIN = {
+[Monster] WESPENK_NIGIN = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Female
     Race                         = Race.Monster

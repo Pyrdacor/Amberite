@@ -1,6 +1,6 @@
 ﻿// Source: 051
 
-[Character] DÖNNER = {
+[Character] D_NNER = {
     Type                         = CharacterType.NPC
     Gender                       = Gender.Male
     Race                         = Race.Dwarf

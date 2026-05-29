@@ -1,6 +1,6 @@
 namespace Ambermoon.Aon;
 
-internal static class StructFlattener
+public static class StructFlattener
 {
     public static IReadOnlyList<FlatField> Flatten(StructDef structDef, AodFile file)
     {

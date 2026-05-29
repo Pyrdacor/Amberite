@@ -1,6 +1,6 @@
 namespace Ambermoon.Aon;
 
-internal static class SizeCalculator
+public static class SizeCalculator
 {
     public static int TypeSize(TypeRef typeRef, AodFile file)
     {

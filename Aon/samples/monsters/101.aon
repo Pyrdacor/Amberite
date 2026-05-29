@@ -1,6 +1,6 @@
 ﻿// Source: 101
 
-[Monster] WÄRTER = {
+[Monster] W_RTER = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Moranian

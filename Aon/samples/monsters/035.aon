@@ -1,6 +1,6 @@
 ﻿// Source: 035
 
-[Monster] MINOR_DÄMON = {
+[Monster] MINOR_D_MON = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

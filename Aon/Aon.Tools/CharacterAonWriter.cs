@@ -249,9 +249,15 @@ internal static class CharacterAonWriter
         if (string.IsNullOrWhiteSpace(name)) return "Unknown";
         var sb = new StringBuilder();
         foreach (char c in name)
-            sb.Append(char.IsLetterOrDigit(c) ? c : '_');
-        if (sb.Length == 0 || !char.IsLetter(sb[0]))
+            sb.Append(IsAsciiAlnum(c) ? c : '_');
+        if (sb.Length == 0 || !IsAsciiLetter(sb[0]))
             sb.Insert(0, '_');
         return sb.ToString();
     }
+
+    private static bool IsAsciiAlnum(char c) =>
+        (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+
+    private static bool IsAsciiLetter(char c) =>
+        (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
 }

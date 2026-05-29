@@ -1,6 +1,6 @@
 ﻿// Source: 007
 
-[Character] VERRÜCKTER = {
+[Character] VERR_CKTER = {
     Type                         = CharacterType.NPC
     Gender                       = Gender.Male
     Race                         = Race.Human

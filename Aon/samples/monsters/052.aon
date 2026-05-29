@@ -1,6 +1,6 @@
 ﻿// Source: 052
 
-[Monster] HAUPTWÄCHTER = {
+[Monster] HAUPTW_CHTER = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

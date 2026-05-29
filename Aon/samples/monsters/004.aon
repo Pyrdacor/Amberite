@@ -1,6 +1,6 @@
 ﻿// Source: 004
 
-[Monster] HÖHLENMOLCH = {
+[Monster] H_HLENMOLCH = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

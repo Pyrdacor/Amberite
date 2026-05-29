@@ -1,6 +1,6 @@
 ﻿// Source: 095
 
-[Monster] PRÜFUNGSDÄMON = {
+[Monster] PR_FUNGSD_MON = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

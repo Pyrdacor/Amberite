@@ -1,6 +1,6 @@
 ﻿// Source: 058
 
-[Monster] HÖHLENSPINNE = {
+[Monster] H_HLENSPINNE = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

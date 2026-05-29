@@ -1,6 +1,6 @@
 ﻿// Source: 051
 
-[Monster] WÄCHTER = {
+[Monster] W_CHTER = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

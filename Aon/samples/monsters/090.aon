@@ -1,6 +1,6 @@
 ﻿// Source: 090
 
-[Monster] KAMPFWÄCHTER = {
+[Monster] KAMPFW_CHTER = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

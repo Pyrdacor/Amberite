@@ -1,6 +1,6 @@
 ﻿// Source: 065
 
-[Monster] DÄMONENBRUT = {
+[Monster] D_MONENBRUT = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Male
     Race                         = Race.Monster

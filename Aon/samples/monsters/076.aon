@@ -1,6 +1,6 @@
 ﻿// Source: 076
 
-[Monster] WÜSTENGOLEM = {
+[Monster] W_STENGOLEM = {
     Type                         = CharacterType.Monster
     Gender                       = Gender.Female
     Race                         = Race.Monster

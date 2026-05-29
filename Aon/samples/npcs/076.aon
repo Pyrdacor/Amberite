@@ -1,6 +1,6 @@
 ﻿// Source: 076
 
-[Character] WÄRTER = {
+[Character] W_RTER = {
     Type                         = CharacterType.NPC
     Gender                       = Gender.Male
     Race                         = Race.Moranian
