@@ -10,12 +10,19 @@ internal static class ValueFormatter
         AonIntValue i    => i.Value.ToString(),
         AonHexValue h    => $"0x{h.Value:X}",
         AonStringValue s => s.Value,
-        AonRefValue r    => r.QualifiedName,
+        AonRefValue r    => StripPrefix(r.QualifiedName),
         AonFlagsValue f  => $"{Format(f.Left, depth)} | {Format(f.Right, depth)}",
         AonObjectValue o => FormatObject(o, depth),
         AonArrayValue a  => FormatArray(a, depth),
         _                => value.ToString() ?? "",
     };
+
+    // "Race.Human" → "Human", "Monster" → "Monster"
+    private static string StripPrefix(string name)
+    {
+        int dot = name.LastIndexOf('.');
+        return dot >= 0 ? name[(dot + 1)..] : name;
+    }
 
     private static string FormatObject(AonObjectValue o, int depth)
     {
